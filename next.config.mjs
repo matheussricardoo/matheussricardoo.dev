@@ -4,7 +4,6 @@ const nextConfig = {
     domains: ['github.com', 'api.github.com', 'raw.githubusercontent.com'],
     unoptimized: true
   },
-  swcMinify: true,
   reactStrictMode: true,
   poweredByHeader: false,
   output: 'standalone'

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 // Componente de Loading
 function ExerciseCardSkeleton() {
@@ -207,7 +208,7 @@ export default function MoocContent() {
         {/* Header com navegação */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
           <div className="flex items-center gap-4">
-            <a
+            <Link
               href="/"
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
@@ -215,7 +216,7 @@ export default function MoocContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               {t.back}
-            </a>
+            </Link>
           </div>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
             {t.moocTitle}
@@ -293,7 +294,7 @@ export default function MoocContent() {
                   {/* Links */}
                   <div className="flex flex-col gap-3 mt-auto">
                     {/* Link para o código */}
-                    <a
+                    <Link
                       href={getGithubFileUrl(exercise.path)}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -303,10 +304,10 @@ export default function MoocContent() {
                       <svg className="w-4 h-4 flex-shrink-0 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
 
                     {/* Link para testar */}
-                    <a
+                    <Link
                       href={createJDoodleLink(exercise)}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -321,7 +322,7 @@ export default function MoocContent() {
                       <svg className="w-4 h-4 flex-shrink-0 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

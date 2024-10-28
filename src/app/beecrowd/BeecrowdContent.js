@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 // Componente de Loading
 function ExerciseCardSkeleton() {
@@ -230,7 +231,7 @@ export default function BeecrowdContent() {
         {/* Header com navegação */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
           <div className="flex items-center gap-4">
-            <a
+            <Link
               href="/"
               className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
             >
@@ -238,7 +239,7 @@ export default function BeecrowdContent() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
               {t.back}
-            </a>
+            </Link>
           </div>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
             {t.beecrowdTitle}
@@ -334,7 +335,7 @@ export default function BeecrowdContent() {
                   {/* Links */}
                   <div className="flex flex-col gap-3 mt-auto">
                     {/* Link para o código */}
-                    <a
+                    <Link
                       href={exercise.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -344,11 +345,11 @@ export default function BeecrowdContent() {
                       <svg className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
 
                     {/* Link para testar */}
                     {getTestEnvironment(exercise.name.split('.').pop().toLowerCase()) && (
-                      <a
+                      <Link
                         href={getTestEnvironment(exercise.name.split('.').pop().toLowerCase()).url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -363,11 +364,11 @@ export default function BeecrowdContent() {
                         <svg className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </a>
+                      </Link>
                     )}
 
                     {/* Link para o problema */}
-                    <a
+                    <Link
                       href={`https://www.beecrowd.com.br/judge/pt/problems/view/${exercise.name.match(/\d+/)[0]}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -377,7 +378,7 @@ export default function BeecrowdContent() {
                       <svg className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
