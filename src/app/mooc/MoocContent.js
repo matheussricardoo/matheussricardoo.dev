@@ -343,7 +343,7 @@ export default function MoocContent() {
                 />
               </svg>
               <p className="text-gray-500 dark:text-gray-400">
-                Nenhum exercício encontrado para "{searchTerm}"
+                Nenhum exercício encontrado para &quot;{searchTerm}&quot;
               </p>
             </div>
           )}
