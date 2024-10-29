@@ -1,9 +1,13 @@
 # Portfolio - Matheus Ricardo
 
-![Next.js](https://img.shields.io/badge/Next.js-14.1-black)
-![React](https://img.shields.io/badge/React-18-blue)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3-38B2AC)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-10-ff69b4)
+<div align="center">
+  
+  [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+  [![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)](https://www.framer.com/)
+  
+</div>
 
 Um portfolio moderno e responsivo construído com Next.js, apresentando projetos e exercícios de programação.
 
