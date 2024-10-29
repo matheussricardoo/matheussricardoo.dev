@@ -114,7 +114,22 @@ const EXERCISES = {
     { name: 'Part03_14.OnTheList', className: 'OnTheList', path: 'Part_3/Part03_14.OnTheList/src/main/java/OnTheList.java' },
     { name: 'Part03_15.PrintInRange', className: 'PrintInRange', path: 'Part_3/Part03_15.PrintInRange/src/main/java/PrintInRange.java' },
     { name: 'Part03_16.Sum', className: 'Sum', path: 'Part_3/Part03_16.Sum/src/main/java/Sum.java' },
-    { name: 'Part03_17.RemoveLast', className: 'RemoveLast', path: 'Part_3/Part03_17.RemoveLast/src/main/java/RemoveLast.java' }
+    { name: 'Part03_17.RemoveLast', className: 'RemoveLast', path: 'Part_3/Part03_17.RemoveLast/src/main/java/RemoveLast.java' },
+    { name: 'Part03_18.Swap', className: 'Swap', path: 'Part_3/Part03_18.Swap/src/main/java/Swap.java' },
+    { name: 'Part03_19.IndexWasNotFound', className: 'IndexWasNotFound', path: 'Part_3/Part03_19.IndexWasNotFound/src/main/java/IndexWasNotFound.java' },
+    { name: 'Part03_20.SumOfArray', className: 'SumOfArray', path: 'Part_3/Part03_20.SumOfArray/src/main/java/SumOfArray.java' },
+    { name: 'Part03_21.PrintNeatly', className: 'PrintNeatly', path: 'Part_3/Part03_21.PrintNeatly/src/main/java/PrintNeatly.java' },
+    { name: 'Part03_22.PrintInStars', className: 'PrintInStars', path: 'Part_3/Part03_22.PrintInStars/src/main/java/PrintInStars.java' },
+    { name: 'Part03_23.PrintThrice', className: 'PrintThrice', path: 'Part_3/Part03_23.PrintThrice/src/main/java/PrintThrice.java' },
+    { name: 'Part03_24.IsItTrue', className: 'IsItTrue', path: 'Part_3/Part03_24.IsItTrue/src/main/java/IsItTrue.java' },
+    { name: 'Part03_25.Login', className: 'Login', path: 'Part_3/Part03_25.Login/src/main/java/Login.java' },
+    { name: 'Part03_26.LineByLine', className: 'LineByLine', path: 'Part_3/Part03_26.LineByLine/src/main/java/LineByLine.java' },
+    { name: 'Part03_27.AVClub', className: 'AVClub', path: 'Part_3/Part03_27.AVClub/src/main/java/AVClub.java' },
+    { name: 'Part03_28.FirstWords', className: 'FirstWords', path: 'Part_3/Part03_28.FirstWords/src/main/java/FirstWords.java' },
+    { name: 'Part03_29.LastWords', className: 'LastWords', path: 'Part_3/Part03_29.LastWords/src/main/java/LastWords.java' },
+    { name: 'Part03_30.AgeOfTheOldest', className: 'AgeOfTheOldest', path: 'Part_3/Part03_30.AgeOfTheOldest/src/main/java/AgeOfTheOldest.java' },
+    { name: 'Part03_31.NameOfTheOldest', className: 'NameOfTheOldest', path: 'Part_3/Part03_31.NameOfTheOldest/src/main/java/NameOfTheOldest.java' },
+    { name: 'Part03_32.PersonalDetails', className: 'PersonalDetails', path: 'Part_3/Part03_32.PersonalDetails/src/main/java/PersonalDetails.java' }
   ]
 };
 
