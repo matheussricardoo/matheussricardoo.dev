@@ -1,111 +1,90 @@
 # Portfolio - Matheus Ricardo
 
 <div align="center">
-  
-  [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-  [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-  [![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)](https://www.framer.com/)
-  
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:355C7D,100:6C5B7B&height=200&section=header&text=Portfolio&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=40&desc=Next.js%20|%20React%20|%20TailwindCSS%20|%20Framer%20Motion&descAlignY=60&descSize=18">
+
+<p align="center">
+  <i>🚀 A modern and responsive portfolio built with cutting-edge technologies to showcase programming projects and exercises.</i>
+</p>
+
+<p align="center">
+  <i>🚀 Um portfólio moderno e responsivo construído com tecnologias de ponta para apresentar projetos e exercícios de programação.</i>
+</p>
+
+---
+
+### 🌟 Features | Funcionalidades
+
+<div align="center">
+
+|  Feature  | Description | Descrição |
+|:---------:|:------------|:----------|
+| 🌓 | Dark and light theme with smooth transitions | Tema claro e escuro com transições suaves |
+| 🌎 | Available in English and Portuguese | Disponível em Inglês e Português |
+| 📱 | Fully responsive across all devices | Totalmente responsivo em todos dispositivos |
+| ⚡ | Smooth animations and transitions | Animações e transições suaves |
+| 🔍 | Smart search functionality | Funcionalidade de busca inteligente |
+| 🎨 | Clean and modern interface | Interface limpa e moderna |
+
 </div>
 
-Um portfolio moderno e responsivo construído com Next.js, apresentando projetos e exercícios de programação.
+### 📦 Dependencies | Dependências
 
-## 🌟 Features
-
-- 🌓 Tema claro/escuro
-- 🌎 Internacionalização (PT-BR/EN)
-- 📱 Design responsivo
-- ⚡ Animações suaves com Framer Motion
-- 🔍 Busca de exercícios
-- 🎨 UI moderna com TailwindCSS
-- 🚀 Performance otimizada
-
-## 🛠️ Tecnologias
-
-- [Next.js 14.1](https://nextjs.org/)
-- [React 18](https://reactjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-
-## 📦 Dependências
-
-### Produção
-- next: 14.1.0
-- react: 18.2.0
-- react-dom: 18.2.0
-- framer-motion: 10.18.0
-
-### Desenvolvimento
-- autoprefixer: 10.4.16
-- eslint: 8.56.0
-- eslint-config-next: 14.1.0
-- postcss: 8.4.32
-- tailwindcss: 3.3.0
-
-### Scripts Disponíveis
-- `npm run dev`: Inicia o servidor de desenvolvimento
-- `npm run build`: Cria a build de produção
-- `npm run start`: Inicia o servidor de produção
-- `npm run lint`: Executa o linter
-
-## 🚀 Começando
-
-### Pré-requisitos
-
-- Node.js 18.17 ou superior
-- npm ou yarn
-
-### Instalação
-
-1. Clone o repositório
-   ```bash
-   git clone https://github.com/matheussricardoo/portfolio.git
-   ```
-
-2. Instale as dependências
-   ```bash
-   npm install
-   # ou
-   yarn install
-   ```
-
-3. Rode o servidor de desenvolvimento
-   ```bash
-   npm run dev
-   # ou
-   yarn dev
-   ```
-
-4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
-
-## 📁 Estrutura do Projeto
-
-```
-src/
-├── app/
-│   ├── components/ # Componentes reutilizáveis
-│   ├── contexts/ # Contextos React (tema, idioma)
-│   ├── fonts/ # Fontes locais
-│   ├── i18n/ # Traduções
-│   ├── utils/ # Utilitários
-│   ├── beecrowd/ # Página de exercícios Beecrowd
-│   ├── mooc/ # Página de exercícios MOOC Helsinki
-│   ├── layout.js # Layout principal
-│   └── page.js # Página inicial
+```bash
+next: 14.1.0
+react: 18.2.0
+react-dom: 18.2.0
+framer-motion: 10.18.0
+tailwindcss: 3.3.0
 ```
 
-## 📄 Licença
+### 🚀 Getting Started | Começando
 
-Este projeto está sob a licença MIT.
+```bash
+# Clone the repository | Clone o repositório
+git clone https://github.com/matheussricardoo/portfolio.git
 
-## 👤 Autor
+# Install dependencies | Instale as dependências
+npm install
 
-**Matheus Ricardo**
+# Start development server | Inicie o servidor de desenvolvimento
+npm run dev
+```
 
-* Github: [@matheussricardoo](https://github.com/matheussricardoo)
-* LinkedIn: [@matheus-ricardo](https://www.linkedin.com/in/matheus-ricardo-426452266/)
+### 📁 Project Structure | Estrutura do Projeto
 
-## 🌟 Mostre seu suporte
+<div align="center">
 
-Dê uma ⭐️ se esse projeto te ajudou!
+| Directory | Purpose | Propósito |
+|:---------:|:--------|:----------|
+| `/src/app/beecrowd` | Beecrowd challenges page | Página para desafios da Beecrowd |
+| `/src/app/mooc` | MOOC Helsinki challenges page | Página para desafios do MOOC Helsinki |
+| `/src/app/components` | UI Components (Footer, Language & Theme toggles) | Componentes UI (Footer, Seleção de idioma e tema) |
+| `/src/app/contexts` | React context providers | Provedores de contexto React |
+| `/src/app/fonts` | Local fonts | Fontes locais |
+| `/src/app/i18n` | Language files and translations | Arquivos de idioma e traduções |
+| `/src/app/utils` | Helper functions and utilities | Funções auxiliares e utilitários |
+
+</div>
+
+### 👤 Author | Autor
+
+<div align="center">
+  <a href="https://github.com/matheussricardoo" target="_blank">
+    <img src="https://skillicons.dev/icons?i=github" alt="GitHub"/>
+  </a>
+  <a href="https://www.linkedin.com/in/matheus-ricardo-426452266/" target="_blank">
+    <img src="https://skillicons.dev/icons?i=linkedin" alt="LinkedIn"/>
+  </a>
+</div>
+
+### 📄 License | Licença
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:355C7D,100:6C5B7B&height=120&section=footer"/>
+
+</div>
