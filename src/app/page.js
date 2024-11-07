@@ -38,20 +38,50 @@ function RepositoryCardSkeleton() {
   );
 }
 
-// Função para gerar URL do StackBlitz
-function getStackBlitzUrl(repo) {
-  return `https://stackblitz.com/github/${repo.full_name}`;
-}
-
-// Função para gerar URL do CodeSandbox
-function getCodeSandboxUrl(repo) {
-  return `https://codesandbox.io/s/github/${repo.full_name}`;
-}
 
 // Função para determinar o ambiente de teste baseado na linguagem
 function getTestEnvironment(repo) {
-  const language = repo.language?.toLowerCase();
-  
+  // Para projetos web específicos
+  if (repo.name.toLowerCase() === 'pokedex') {
+    return {
+      url: 'https://gb-pokedex.vercel.app/',
+      name: 'Live Demo',
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      ),
+      className: 'bg-blue-500 text-white dark:bg-blue-600 dark:text-white hover:bg-blue-600 dark:hover:bg-blue-700'
+    };
+  }
+
+  // Configurações específicas para ACME-Developers
+  if (repo.name === 'ACME-Developers') {
+    return {
+      url: 'https://www.jdoodle.com/online-java-compiler/',
+      name: 'JDoodle',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573"/>
+        </svg>
+      )
+    };
+  }
+
+  // Configurações específicas para Heranca
+  if (repo.name === 'Heranca') {
+    return {
+      url: 'https://www.jdoodle.com/online-java-compiler/',
+      name: 'JDoodle',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573"/>
+        </svg>
+      )
+    };
+  }
+
   // Configurações específicas para o Jokenpo Game
   if (repo.name === 'jokenpo_game') {
     return {
@@ -59,72 +89,14 @@ function getTestEnvironment(repo) {
       name: 'Python Online Compiler',
       icon: (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/>
-        </svg>
-      ),
-      codeUrl: 'https://github.com/matheussricardoo/jokenpo_game/blob/main/Jokenpo.py'
-    };
-  }
-  
-  // Configurações específicas para o Password Creator
-  if (repo.name === 'Password_creator') {
-    return {
-      url: 'https://www.programiz.com/python-programming/online-compiler/',
-      name: 'Python Online Compiler',
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/>
-        </svg>
-      ),
-      codeUrl: 'https://github.com/matheussricardoo/Password_creator/blob/main/Password_creator.py'
-    };
-  }
-  
-  if (language === 'java') {
-    return {
-      url: `https://www.jdoodle.com/embed/v0/0?stdin=0&arg=0&rw=1&source=${encodeURIComponent(
-        `// ${repo.name}\n` +
-        `// Link: ${repo.html_url}\n\n` +
-        `public class Main {\n` +
-        `    public static void main(String[] args) {\n` +
-        `        // Seu código aqui\n` +
-        `    }\n` +
-        `}`
-      )}`,
-      name: 'JDoodle',
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627"/>
+          <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05z"/>
         </svg>
       )
     };
   }
-  
-  if (language === 'python' || repo.name === 'jokenpo_game' || repo.name === 'Password_creator') {
-    return {
-      url: 'https://www.programiz.com/python-programming/online-compiler/',
-      name: 'Python Online Compiler',
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05z"/>
-        </svg>
-      ),
-      codeUrl: repo.name === 'jokenpo_game' 
-        ? 'https://github.com/matheussricardoo/jokenpo_game/blob/main/Jokenpo.py'
-        : 'https://github.com/matheussricardoo/Password_creator/blob/main/Password_creator.py'
-    };
-  }
-  
-  // Para projetos web (JavaScript, TypeScript, etc)
-  return {
-    url: `https://stackblitz.com/github/matheussricardoo/${repo.name}`,
-    name: 'StackBlitz',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    )
-  };
+
+  // Para outros projetos, não mostrar botão de teste
+  return null;
 }
 
 // Função para verificar se é um repositório grande de exercícios
@@ -132,7 +104,7 @@ function isExerciseRepo(repoName) {
   return ['beecrowd-solutions', 'java-programming1-mooc-helsinki'].includes(repoName);
 }
 
-// Função para determinar as linguagens disponíveis por repositório
+// Funço para determinar as linguagens disponíveis por repositório
 function getRepoLanguages(repoName) {
   const languages = {
     'beecrowd-solutions': ['Java', 'Python', 'SQL'],
@@ -172,6 +144,21 @@ export default function Home() {
 
     fetchRepos();
   }, []);
+
+  // Definir as descrições dos projetos usando o contexto de linguagem
+  const getProjectDescription = (repoName) => {
+    if (repoName.toLowerCase() === 'pokedex') {
+      return t.pokedexDesc;
+    }
+    const descriptions = {
+      'gb-pokedex': t.pokedexDesc,
+      'jokenpo_game': t.jokenpoDesc,
+      'ACME-Developers': t.acmeDesc,
+      'Heranca': t.herancasDesc
+    };
+    
+    return descriptions[repoName] || t.noDescription;
+  };
 
   return (
     <div className="min-h-full bg-white dark:bg-gray-950 relative">
@@ -331,25 +318,17 @@ export default function Home() {
               repos
                 .filter(repo => !['beecrowd-solutions', 'java-programming1-mooc-helsinki'].includes(repo.name))
                 .map((repo) => {
-                  const getDescKey = (repoName) => {
-                    const keyMap = {
-                      'jokenpo_game': 'jokenpoDesc',
-                      'Password_creator': 'passwordCreatorDesc',
-                      'ACME-Developers': 'acmeDesc',
-                      'Heranca': 'herancasDesc'      // Corrigido para 'Heranca' com H maiúsculo
-                    };
-                    return keyMap[repoName] || null;
-                  };
-
-                  const descKey = getDescKey(repo.name);
+                  const description = getProjectDescription(repo.name);
                   const env = getTestEnvironment(repo);
                   const language = repo.language?.toUpperCase() || 'N/A';
                   const languageClass = language === 'JAVA' 
                     ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300'
                     : language === 'PYTHON' 
                       ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
-                      : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300';
-                  
+                      : language === 'JAVASCRIPT'
+                        ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300'
+                        : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300';
+
                   return (
                     <motion.div
                       key={repo.id}
@@ -372,13 +351,13 @@ export default function Home() {
                             )}
                           </div>
                           <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
-                            {descKey ? t[descKey] : t.noDescription}
+                            {description}
                           </p>
                         </div>
 
                         <div className="flex flex-col gap-3">
                           <a
-                            href={env.codeUrl || repo.html_url}
+                            href={repo.html_url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-between px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group"
@@ -389,20 +368,32 @@ export default function Home() {
                             </svg>
                           </a>
 
-                          <a
-                            href={env.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group"
-                          >
-                            <span className="text-sm text-gray-700 dark:text-gray-300 flex items-center gap-2">
-                              <span className="flex-shrink-0">{env.icon}</span>
-                              <span className="truncate">{t.testIn} {env.name}</span>
-                            </span>
-                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </a>
+                          {env && (
+                            <a
+                              href={env.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`flex items-center justify-between px-4 py-2 rounded-lg transition-colors group ${
+                                repo.name.toLowerCase() === 'pokedex'
+                                  ? 'bg-blue-500 text-white dark:bg-blue-600 dark:text-white hover:bg-blue-600 dark:hover:bg-blue-700'
+                                  : 'bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'
+                              }`}
+                            >
+                              <span className={`text-sm flex items-center gap-2 ${
+                                repo.name.toLowerCase() === 'pokedex' ? 'text-white' : 'text-gray-700 dark:text-gray-300'
+                              }`}>
+                                <span className="flex-shrink-0">{env.icon}</span>
+                                <span className="truncate">
+                                  {repo.name.toLowerCase() === 'pokedex' ? 'Live Demo' : `${t.testIn} ${env.name}`}
+                                </span>
+                              </span>
+                              <svg className={`w-4 h-4 group-hover:translate-x-1 transition-transform ${
+                                repo.name.toLowerCase() === 'pokedex' ? 'text-white' : 'text-gray-500 dark:text-gray-400'
+                              }`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </a>
+                          )}
                         </div>
                       </div>
                     </motion.div>
