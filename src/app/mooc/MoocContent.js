@@ -18,7 +18,10 @@ function ExerciseCardSkeleton() {
 const PARTS = [
   { name: 'Part01', path: 'Part_1', displayName: 'Part01' },
   { name: 'Part02', path: 'Part_2', displayName: 'Part02' },
-  { name: 'Part03', path: 'Part_3', displayName: 'Part03' }
+  { name: 'Part03', path: 'Part_3', displayName: 'Part03' },
+  { name: 'Part04', path: 'Part_4', displayName: 'Part04' },
+  { name: 'Part05', path: 'Part_5', displayName: 'Part05' },
+  { name: 'Part06', path: 'Part_6', displayName: 'Part06' }
 ];
 
 const EXERCISES = {
@@ -130,6 +133,65 @@ const EXERCISES = {
     { name: 'Part03_30.AgeOfTheOldest', className: 'AgeOfTheOldest', path: 'Part_3/Part03_30.AgeOfTheOldest/src/main/java/AgeOfTheOldest.java' },
     { name: 'Part03_31.NameOfTheOldest', className: 'NameOfTheOldest', path: 'Part_3/Part03_31.NameOfTheOldest/src/main/java/NameOfTheOldest.java' },
     { name: 'Part03_32.PersonalDetails', className: 'PersonalDetails', path: 'Part_3/Part03_32.PersonalDetails/src/main/java/PersonalDetails.java' }
+  ],
+  'Part_4': [
+    { name: 'Part04_01.YourFirstAccount', className: 'YourFirstAccount', path: 'Part_4/Part04_01.YourFirstAccount/src/main/java/YourFirstAccount.java' },
+    { name: 'Part04_02.YourFirstBankTransfer', className: 'YourFirstBankTransfer', path: 'Part_4/Part04_02.YourFirstBankTransfer/src/main/java/YourFirstBankTransfer.java' },
+    { name: 'Part04_03.DogAttributes', className: 'DogAttributes', path: 'Part_4/Part04_03.DogAttributes/src/main/java/DogAttributes.java' },
+    { name: 'Part04_04.Room', className: 'Room', path: 'Part_4/Part04_04.Room/src/main/java/Room.java' },
+    { name: 'Part04_05.Whistle', className: 'Whistle', path: 'Part_4/Part04_05.Whistle/src/main/java/Whistle.java' },
+    { name: 'Part04_06.Door', className: 'Door', path: 'Part_4/Part04_06.Door/src/main/java/Door.java' },
+    { name: 'Part04_07.Product', className: 'Product', path: 'Part_4/Part04_07.Product/src/main/java/Product.java' },
+    { name: 'Part04_08.DecreasingCounter', className: 'DecreasingCounter', path: 'Part_4/Part04_08.DecreasingCounter/src/main/java/DecreasingCounter.java' },
+    { name: 'Part04_09.Debt', className: 'Debt', path: 'Part_4/Part04_09.Debt/src/main/java/Debt.java' },
+    { name: 'Part04_10.Song', className: 'Song', path: 'Part_4/Part04_10.Song/src/main/java/Song.java' },
+    { name: 'Part04_11.Film', className: 'Film', path: 'Part_4/Part04_11.Film/src/main/java/Film.java' },
+    { name: 'Part04_12.Gauge', className: 'Gauge', path: 'Part_4/Part04_12.Gauge/src/main/java/Gauge.java' },
+    { name: 'Part04_13.Agent', className: 'Agent', path: 'Part_4/Part04_13.Agent/src/main/java/Agent.java' },
+    { name: 'Part04_14.Multiplier', className: 'Multiplier', path: 'Part_4/Part04_14.Multiplier/src/main/java/Multiplier.java' },
+    { name: 'Part04_15.NumberStatistics', className: 'NumberStatistics', path: 'Part_4/Part04_15.NumberStatistics/src/main/java/NumberStatistics.java' },
+    { name: 'Part04_16.PaymentCard', className: 'PaymentCard', path: 'Part_4/Part04_16.PaymentCard/src/main/java/PaymentCard.java' },
+    { name: 'Part04_17.Items', className: 'Items', path: 'Part_4/Part04_17.Items/src/main/java/Items.java' },
+    { name: 'Part04_18.PersonalInformation', className: 'PersonalInformation', path: 'Part_4/Part04_18.PersonalInformation/src/main/java/PersonalInformation.java' },
+    { name: 'Part04_19.TelevisionPrograms', className: 'TelevisionPrograms', path: 'Part_4/Part04_19.TelevisionPrograms/src/main/java/TelevisionPrograms.java' },
+    { name: 'Part04_20.Books', className: 'Books', path: 'Part_4/Part04_20.Books/src/main/java/Books.java' },
+    { name: 'Part04_21.NumberOfStrings', className: 'NumberOfStrings', path: 'Part_4/Part04_21.NumberOfStrings/src/main/java/NumberOfStrings.java' },
+    { name: 'Part04_22.Cubes', className: 'Cubes', path: 'Part_4/Part04_22.Cubes/src/main/java/Cubes.java' },
+    { name: 'Part04_23.CreatingANewFile', className: 'CreatingANewFile', path: 'Part_4/Part04_23.CreatingANewFile/src/main/java/CreatingANewFile.java' },
+    { name: 'Part04_24.PrintingAFile', className: 'PrintingAFile', path: 'Part_4/Part04_24.PrintingAFile/src/main/java/PrintingAFile.java' },
+    { name: 'Part04_25.PrintingASpecifiedFile', className: 'PrintingASpecifiedFile', path: 'Part_4/Part04_25.PrintingASpecifiedFile/src/main/java/PrintingASpecifiedFile.java' },
+    { name: 'Part04_26.GuestListFromAFile', className: 'GuestListFromAFile', path: 'Part_4/Part04_26.GuestListFromAFile/src/main/java/GuestListFromAFile.java' },
+    { name: 'Part04_27.IsItInTheFile', className: 'IsItInTheFile', path: 'Part_4/Part04_27.IsItInTheFile/src/main/java/IsItInTheFile.java' },
+    { name: 'Part04_28.NumbersFromAFile', className: 'NumbersFromAFile', path: 'Part_4/Part04_28.NumbersFromAFile/src/main/java/NumbersFromAFile.java' },
+    { name: 'Part04_29.RecordsFromAFile', className: 'RecordsFromAFile', path: 'Part_4/Part04_29.RecordsFromAFile/src/main/java/RecordsFromAFile.java' },
+    { name: 'Part04_30.StoringRecords', className: 'StoringRecords', path: 'Part_4/Part04_30.StoringRecords/src/main/java/StoringRecords.java' },
+    { name: 'Part04_31.SportStatistics', className: 'SportStatistics', path: 'Part_4/Part04_31.SportStatistics/src/main/java/SportStatistics.java' }
+  ],
+  'Part_5': [
+    { name: 'Part05_01.OneMinute', className: 'OneMinute', path: 'Part_5/Part05_01.OneMinute/src/main/java' },
+    { name: 'Part05_02.Book', className: 'Book', path: 'Part_5/Part05_02.Book/src/main/java' },
+    { name: 'Part05_03.Cube', className: 'Cube', path: 'Part_5/Part05_03.Cube/src/main/java' },
+    { name: 'Part05_04.FitByte', className: 'FitByte', path: 'Part_5/Part05_04.FitByte/src/main/java' },
+    { name: 'Part05_05.ConstructorOverload', className: 'ConstructorOverload', path: 'Part_5/Part05_05.ConstructorOverload/src/main/java' },
+    { name: 'Part05_06.OverloadedCounter', className: 'OverloadedCounter', path: 'Part_5/Part05_06.OverloadedCounter/src/main/java' },
+    { name: 'Part05_07.NullPointerException', className: 'NullPointerException', path: 'Part_5/Part05_07.NullPointerException/src/main/java' },
+    { name: 'Part05_08.BiggestPetShop', className: 'BiggestPetShop', path: 'Part_5/Part05_08.BiggestPetShop/src/main/java' },
+    { name: 'Part05_09.HealthStation', className: 'HealthStation', path: 'Part_5/Part05_09.HealthStation/src/main/java' },
+    { name: 'Part05_10.CardPayments', className: 'CardPayments', path: 'Part_5/Part05_10.CardPayments/src/main/java' },
+    { name: 'Part05_11.ComparingApartments', className: 'ComparingApartments', path: 'Part_5/Part05_11.ComparingApartments/src/main/java' },
+    { name: 'Part05_12.Song', className: 'Song', path: 'Part_5/Part05_12.Song/src/main/java' },
+    { name: 'Part05_13.IdenticalTwins', className: 'IdenticalTwins', path: 'Part_5/Part05_13.IdenticalTwins/src/main/java' },
+    { name: 'Part05_14.Books', className: 'Books', path: 'Part_5/Part05_14.Books/src/main/java' },
+    { name: 'Part05_15.Archive', className: 'Archive', path: 'Part_5/Part05_15.Archive/src/main/java' },
+    { name: 'Part05_16.DatingApp', className: 'DatingApp', path: 'Part_5/Part05_16.DatingApp/src/main/java' },
+    { name: 'Part05_17.Money', className: 'Money', path: 'Part_5/Part05_17.Money/src/main/java' }
+  ],
+  'Part_6': [
+    { name: 'Part06_01.Menu', className: 'Menu', path: 'Part_6/Part06_01.Menu/src/main/java' },
+    { name: 'Part06_02.Stack', className: 'Stack', path: 'Part_6/Part06_02.Stack/src/main/java' },
+    { name: 'Part06_03.MessagingService', className: 'MessagingService', path: 'Part_6/Part06_03.MessagingService/src/main/java' },
+    { name: 'Part06_04.PrintingACollection', className: 'PrintingACollection', path: 'Part_6/Part06_04.PrintingACollection/src/main/java' },
+    { name: 'Part06_05.SantasWorkshop', className: 'SantasWorkshop', path: 'Part_6/Part06_05.SantasWorkshop/src/main/java' }
   ]
 };
 

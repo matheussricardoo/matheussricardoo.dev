@@ -16,11 +16,12 @@ export const translations = {
     // Descrições
     beecrowdDesc: 'Soluções para problemas do Beecrowd em múltiplas linguagens, incluindo Java e Python',
     moocDesc: 'Exercícios do curso de programação Java da Universidade de Helsinki, focado em fundamentos e POO',
-    jokenpoDesc: 'Jogo clássico de Pedra, Papel e Tesoura desenvolvido em Python com interface via terminal',
+    jokenpoDesc: 'Jogo clássico de Pedra, Papel e Tesoura desenvolvido em Python. Apresenta interface via terminal, sistema de pontuação, modos de jogo contra computador ou outro jogador, e estatísticas de partida.',
     passwordCreatorDesc: 'Ferramenta em Python para gerar senhas seguras com opções de comprimento e complexidade',
-    acmeDesc: 'Sistema de gerenciamento empresarial em Java com padrões de projeto Factory, Strategy e Observer',
-    herancasDesc: 'Demonstração prática de herança, polimorfismo e interfaces em Java com exemplos do mundo real',
+    acmeDesc: 'Sistema de gerenciamento empresarial desenvolvido em Java utilizando padrões de projeto (Factory, Strategy, Observer). Implementa gestão de funcionários, folha de pagamento e relatórios com interface via terminal.',
+    herancasDesc: 'Projeto educacional em Java demonstrando conceitos avançados de POO. Inclui exemplos práticos de herança, polimorfismo, interfaces e classes abstratas com casos de uso do mundo real.',
     noDescription: 'Sem descrição disponível',
+    pokedexDesc: 'Uma Pokédex inspirada no Game Boy construída com Next.js e TailwindCSS, apresentando um design retrô, suporte bilíngue (EN/PT-BR) e recursos interativos como comparação de Pokémon e modo quiz "Quem é esse Pokémon?". Experimente a nostalgia da era Game Boy com tecnologias web modernas.',
     
     // Filtros
     all: 'Todos',
@@ -58,11 +59,12 @@ export const translations = {
     // Project descriptions
     beecrowdDesc: 'Solutions for Beecrowd problems in multiple languages, including Java and Python',
     moocDesc: 'Java programming exercises from University of Helsinki, focused on fundamentals and OOP',
-    jokenpoDesc: 'Classic Rock, Paper, Scissors game developed in Python with terminal interface',
+    jokenpoDesc: 'Classic Rock, Paper, Scissors game developed in Python. Features terminal interface, scoring system, game modes against computer or another player, and match statistics.',
     passwordCreatorDesc: 'Python tool for generating secure passwords with length and complexity options',
-    acmeDesc: 'Business management system in Java using Factory, Strategy and Observer design patterns',
-    herancasDesc: 'Practical demonstration of inheritance, polymorphism and interfaces in Java with real-world examples',
+    acmeDesc: 'Business management system developed in Java using design patterns (Factory, Strategy, Observer). Implements employee management, payroll, and reporting with terminal interface.',
+    herancasDesc: 'Educational Java project demonstrating advanced OOP concepts. Includes practical examples of inheritance, polymorphism, interfaces, and abstract classes with real-world use cases.',
     noDescription: 'No description available',
+    pokedexDesc: "A Game Boy-inspired Pokédex built with Next.js and TailwindCSS, featuring a retro design, bilingual support (EN/PT-BR), and interactive features like Pokémon comparison and \"Who's that Pokémon?\" quiz mode. Experience the nostalgia of the Game Boy era with modern web technologies.",
     
     // Filters
     all: 'All',
