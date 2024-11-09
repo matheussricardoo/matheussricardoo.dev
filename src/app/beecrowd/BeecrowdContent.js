@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -68,124 +68,68 @@ function getTestEnvironment(extension) {
   return environments[extension];
 }
 
-const EXERCISES = {
-  'java': [
-    { name: 'problem_1003.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1003.java' },
-    { name: 'problem_1004.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1004.java' },
-    { name: 'problem_1006.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1006.java' },
-    { name: 'problem_1007.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1007.java' },
-    { name: 'problem_1014.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1014.java' },
-    { name: 'problem_1015.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1015.java' },
-    { name: 'problem_1016.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1016.java' },
-    { name: 'problem_1017.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1017.java' },
-    { name: 'problem_1019.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1019.java' },
-    { name: 'problem_1038.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1038.java' },
-    { name: 'problem_1059.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1059.java' },
-    { name: 'problem_1060.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1060.java' },
-    { name: 'problem_1065.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1065.java' },
-    { name: 'problem_1066.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1066.java' },
-    { name: 'problem_1070.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1070.java' },
-    { name: 'problem_1072.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1072.java' },
-    { name: 'problem_1073.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1073.java' },
-    { name: 'problem_1078.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1078.java' },
-    { name: 'problem_1079.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1079.java' },
-    { name: 'problem_1095.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1095.java' },
-    { name: 'problem_1096.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1096.java' },
-    { name: 'problem_1097.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1097.java' },
-    { name: 'problem_1099.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1099.java' },
-    { name: 'problem_1113.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1113.java' },
-    { name: 'problem_1114.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1114.java' },
-    { name: 'problem_1115.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1115.java' },
-    { name: 'problem_1116.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1116.java' },
-    { name: 'problem_1117.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1117.java' },
-    { name: 'problem_1131.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1131.java' },
-    { name: 'problem_1132.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1132.java' },
-    { name: 'problem_1134.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1134.java' },
-    { name: 'problem_1142.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1142.java' },
-    { name: 'problem_1143.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1143.java' },
-    { name: 'problem_1144.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1144.java' },
-    { name: 'problem_1149.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1149.java' },
-    { name: 'problem_1150.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1150.java' },
-    { name: 'problem_1153.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1153.java' },
-    { name: 'problem_1154.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1154.java' },
-    { name: 'problem_1157.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1157.java' },
-    { name: 'problem_1158.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1158.java' },
-    { name: 'problem_1172.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1172.java' },
-    { name: 'problem_1173.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1173.java' },
-    { name: 'problem_1177.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1177.java' },
-    { name: 'problem_1188.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1188.java' },
-    { name: 'problem_1190.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1190.java' },
-    { name: 'problem_1478.java', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1478.java' }
-  ],
-  'py': [
-    { name: 'problem_1003.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1003.py' },
-    { name: 'problem_1004.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1004.py' },
-    { name: 'problem_1006.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1006.py' },
-    { name: 'problem_1007.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1007.py' },
-    { name: 'problem_1014.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1014.py' },
-    { name: 'problem_1015.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1015.py' },
-    { name: 'problem_1016.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1016.py' },
-    { name: 'problem_1017.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1017.py' },
-    { name: 'problem_1019.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1019.py' },
-    { name: 'problem_1038.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1038.py' },
-    { name: 'problem_1059.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1059.py' },
-    { name: 'problem_1060.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1060.py' },
-    { name: 'problem_1065.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1065.py' },
-    { name: 'problem_1066.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1066.py' },
-    { name: 'problem_1070.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1070.py' },
-    { name: 'problem_1072.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1072.py' },
-    { name: 'problem_1073.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1073.py' },
-    { name: 'problem_1078.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1078.py' },
-    { name: 'problem_1079.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1079.py' },
-    { name: 'problem_1095.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1095.py' },
-    { name: 'problem_1096.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1096.py' },
-    { name: 'problem_1097.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1097.py' },
-    { name: 'problem_1099.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1099.py' },
-    { name: 'problem_1113.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1113.py' },
-    { name: 'problem_1114.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1114.py' },
-    { name: 'problem_1115.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1115.py' },
-    { name: 'problem_1116.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1116.py' },
-    { name: 'problem_1117.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1117.py' },
-    { name: 'problem_1131.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1131.py' },
-    { name: 'problem_1132.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1132.py' },
-    { name: 'problem_1134.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1134.py' },
-    { name: 'problem_1142.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1142.py' },
-    { name: 'problem_1143.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1143.py' },
-    { name: 'problem_1144.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1144.py' },
-    { name: 'problem_1149.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1149.py' },
-    { name: 'problem_1150.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1150.py' },
-    { name: 'problem_1153.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1153.py' },
-    { name: 'problem_1154.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1154.py' },
-    { name: 'problem_1157.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1157.py' },
-    { name: 'problem_1158.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1158.py' },
-    { name: 'problem_1172.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1172.py' },
-    { name: 'problem_1173.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1173.py' },
-    { name: 'problem_1177.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1177.py' },
-    { name: 'problem_1188.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1188.py' },
-    { name: 'problem_1190.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1190.py' },
-    { name: 'problem_1478.py', url: 'https://github.com/matheussricardoo/beecrowd-solutions/blob/main/Level_1/problem_1478.py' }
-  ]
-};
-
 export default function BeecrowdContent() {
   const { t } = useLanguage();
   const [selectedLanguages, setSelectedLanguages] = useState(['java', 'py']);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const [exercises, setExercises] = useState({ java: [], py: [] });
+
+  useEffect(() => {
+    async function fetchExercises() {
+      try {
+        setLoading(true);
+        // Buscar conteúdo do diretório Level_1
+        const response = await fetch('https://api.github.com/repos/matheussricardoo/beecrowd-solutions/contents/Level_1');
+        
+        if (!response.ok) throw new Error('Failed to fetch');
+        
+        const files = await response.json();
+        
+        // Separar arquivos por extensão
+        const javaFiles = files.filter(file => file.name.endsWith('.java'))
+          .map(file => ({
+            name: file.name,
+            url: file.html_url,
+            download_url: file.download_url
+          }));
+          
+        const pythonFiles = files.filter(file => file.name.endsWith('.py'))
+          .map(file => ({
+            name: file.name,
+            url: file.html_url,
+            download_url: file.download_url
+          }));
+
+        setExercises({
+          java: javaFiles,
+          py: pythonFiles
+        });
+      } catch (error) {
+        console.error('Erro ao buscar exercícios:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchExercises();
+  }, []);
 
   // Função para obter os exercícios filtrados
   const getFilteredExercises = () => {
     let allExercises = [];
     selectedLanguages.forEach(lang => {
-      if (EXERCISES[lang]) {
-        allExercises = [...allExercises, ...EXERCISES[lang]];
+      if (exercises[lang]) {
+        allExercises = [...allExercises, ...exercises[lang]];
       }
     });
-    return allExercises.sort((a, b) => {
-      const numA = parseInt(a.name.match(/\d+/)[0]);
-      const numB = parseInt(b.name.match(/\d+/)[0]);
-      return numA - numB;
-    });
+    return allExercises
+      .filter(exercise => exercise.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      .sort((a, b) => {
+        const numA = parseInt(a.name.match(/\d+/)[0]);
+        const numB = parseInt(b.name.match(/\d+/)[0]);
+        return numA - numB;
+      });
   };
 
   const toggleLanguage = (language) => {
@@ -210,11 +154,6 @@ export default function BeecrowdContent() {
   const selectAllLanguages = () => {
     setSelectedLanguages(['java', 'py']);
   };
-
-  // Filtrar exercícios baseado na pesquisa
-  const filteredExercises = getFilteredExercises().filter(exercise =>
-    exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <motion.div
@@ -299,8 +238,8 @@ export default function BeecrowdContent() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {loading ? (
             [...Array(6)].map((_, i) => <ExerciseCardSkeleton key={i} />)
-          ) : filteredExercises.length > 0 ? (
-            filteredExercises.map((exercise, index) => (
+          ) : getFilteredExercises().length > 0 ? (
+            getFilteredExercises().map((exercise, index) => (
               <motion.div
                 key={exercise.name}
                 initial={{ opacity: 0, scale: 0.9 }}

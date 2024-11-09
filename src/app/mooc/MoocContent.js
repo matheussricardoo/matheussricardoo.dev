@@ -21,203 +21,9 @@ const PARTS = [
   { name: 'Part03', path: 'Part_3', displayName: 'Part03' },
   { name: 'Part04', path: 'Part_4', displayName: 'Part04' },
   { name: 'Part05', path: 'Part_5', displayName: 'Part05' },
-  { name: 'Part06', path: 'Part_6', displayName: 'Part06' }
+  { name: 'Part06', path: 'Part_6', displayName: 'Part06' },
+  { name: 'Part07', path: 'Part_7', displayName: 'Part07' }
 ];
-
-const EXERCISES = {
-  'Part_1': [
-    { name: 'Part01_01.Sandbox', className: 'Sandbox', path: 'Part_1/Part01_01.Sandbox/src/main/java/Sandbox.java' },
-    { name: 'Part01_02.AdaLovelace', className: 'AdaLovelace', path: 'Part_1/Part01_02.AdaLovelace/src/main/java/AdaLovelace.java' },
-    { name: 'Part01_03.OnceUponATime', className: 'OnceUponATime', path: 'Part_1/Part01_03.OnceUponATime/src/main/java/OnceUponATime.java' },
-    { name: 'Part01_04.Dinosaur', className: 'Dinosaur', path: 'Part_1/Part01_04.Dinosaur/src/main/java/Dinosaur.java' },
-    { name: 'Part01_05.Message', className: 'Message', path: 'Part_1/Part01_05.Message/src/main/java/Message.java' },
-    { name: 'Part01_06.HiAdaLovelace', className: 'HiAdaLovelace', path: 'Part_1/Part01_06.HiAdaLovelace/src/main/java/HiAdaLovelace.java' },
-    { name: 'Part01_07.MessageThreeTimes', className: 'MessageThreeTimes', path: 'Part_1/Part01_07.MessageThreeTimes/src/main/java/MessageThreeTimes.java' },
-    { name: 'Part01_08.Greeting', className: 'Greeting', path: 'Part_1/Part01_08.Greeting/src/main/java/Greeting.java' },
-    { name: 'Part01_09.Conversation', className: 'Conversation', path: 'Part_1/Part01_09.Conversation/src/main/java/Conversation.java' },
-    { name: 'Part01_10.Story', className: 'Story', path: 'Part_1/Part01_10.Story/src/main/java/Story.java' },
-    { name: 'Part01_11.VariousVariables', className: 'VariousVariables', path: 'Part_1/Part01_11.VariousVariables/src/main/java/VariousVariables.java' },
-    { name: 'Part01_12.IntegerInput', className: 'IntegerInput', path: 'Part_1/Part01_12.IntegerInput/src/main/java/IntegerInput.java' },
-    { name: 'Part01_13.DoubleInput', className: 'DoubleInput', path: 'Part_1/Part01_13.DoubleInput/src/main/java/DoubleInput.java' },
-    { name: 'Part01_14.BooleanInput', className: 'BooleanInput', path: 'Part_1/Part01_14.BooleanInput/src/main/java/BooleanInput.java' },
-    { name: 'Part01_15.DifferentTypesOfInput', className: 'DifferentTypesOfInput', path: 'Part_1/Part01_15.DifferentTypesOfInput/src/main/java/DifferentTypesOfInput.java' },
-    { name: 'Part01_16.SecondsInADay', className: 'SecondsInADay', path: 'Part_1/Part01_16.SecondsInADay/src/main/java/SecondsInADay.java' },
-    { name: 'Part01_17.SumOfTwoNumbers', className: 'SumOfTwoNumbers', path: 'Part_1/Part01_17.SumOfTwoNumbers/src/main/java/SumOfTwoNumbers.java' },
-    { name: 'Part01_18.SumOfThreeNumbers', className: 'SumOfThreeNumbers', path: 'Part_1/Part01_18.SumOfThreeNumbers/src/main/java/SumOfThreeNumbers.java' },
-    { name: 'Part01_19.AdditionFormula', className: 'AdditionFormula', path: 'Part_1/Part01_19.AdditionFormula/src/main/java/AdditionFormula.java' },
-    { name: 'Part01_20.MultiplicationFormula', className: 'MultiplicationFormula', path: 'Part_1/Part01_20.MultiplicationFormula/src/main/java/MultiplicationFormula.java' },
-    { name: 'Part01_21.AverageOfTwoNumbers', className: 'AverageOfTwoNumbers', path: 'Part_1/Part01_21.AverageOfTwoNumbers/src/main/java/AverageOfTwoNumbers.java' },
-    { name: 'Part01_22.AverageOfThreeNumbers', className: 'AverageOfThreeNumbers', path: 'Part_1/Part01_22.AverageOfThreeNumbers/src/main/java/AverageOfThreeNumbers.java' },
-    { name: 'Part01_23.SimpleCalculator', className: 'SimpleCalculator', path: 'Part_1/Part01_23.SimpleCalculator/src/main/java/SimpleCalculator.java' },
-    { name: 'Part01_24.SpeedingTicket', className: 'SpeedingTicket', path: 'Part_1/Part01_24.SpeedingTicket/src/main/java/SpeedingTicket.java' },
-    { name: 'Part01_25.CheckYourIndentation', className: 'CheckYourIndentation', path: 'Part_1/Part01_25.CheckYourIndentation/src/main/java/CheckYourIndentation.java' },
-    { name: 'Part01_26.Orwell', className: 'Orwell', path: 'Part_1/Part01_26.Orwell/src/main/java/Orwell.java' },
-    { name: 'Part01_27.Ancient', className: 'Ancient', path: 'Part_1/Part01_27.Ancient/src/main/java/Ancient.java' },
-    { name: 'Part01_28.Positivity', className: 'Positivity', path: 'Part_1/Part01_28.Positivity/src/main/java/Positivity.java' },
-    { name: 'Part01_29.Adulthood', className: 'Adulthood', path: 'Part_1/Part01_29.Adulthood/src/main/java/Adulthood.java' },
-    { name: 'Part01_30.LargerThanOrEqualTo', className: 'LargerThanOrEqualTo', path: 'Part_1/Part01_30.LargerThanOrEqualTo/src/main/java/LargerThanOrEqualTo.java' },
-    { name: 'Part01_31.GradesAndPoints', className: 'GradesAndPoints', path: 'Part_1/Part01_31.GradesAndPoints/src/main/java/GradesAndPoints.java' },
-    { name: 'Part01_32.OddOrEven', className: 'OddOrEven', path: 'Part_1/Part01_32.OddOrEven/src/main/java/OddOrEven.java' },
-    { name: 'Part01_33.Password', className: 'Password', path: 'Part_1/Part01_33.Password/src/main/java/Password.java' },
-    { name: 'Part01_34.Same', className: 'Same', path: 'Part_1/Part01_34.Same/src/main/java/Same.java' },
-    { name: 'Part01_35.CheckingTheAge', className: 'CheckingTheAge', path: 'Part_1/Part01_35.CheckingTheAge/src/main/java/CheckingTheAge.java' },
-    { name: 'Part01_36.LeapYear', className: 'LeapYear', path: 'Part_1/Part01_36.LeapYear/src/main/java/LeapYear.java' },
-    { name: 'Part01_37.GiftTax', className: 'GiftTax', path: 'Part_1/Part01_37.GiftTax/src/main/java/GiftTax.java' }
-  ],
-  'Part_2': [
-    { name: 'Part02_01.Squared', className: 'Squared', path: 'Part_2/Part02_01.Squared/src/main/java/Squared.java' },
-    { name: 'Part02_02.SquareRootOfSum', className: 'SquareRootOfSum', path: 'Part_2/Part02_02.SquareRootOfSum/src/main/java/SquareRootOfSum.java' },
-    { name: 'Part02_03.AbsoluteValue', className: 'AbsoluteValue', path: 'Part_2/Part02_03.AbsoluteValue/src/main/java/AbsoluteValue.java' },
-    { name: 'Part02_04.ComparingNumbers', className: 'ComparingNumbers', path: 'Part_2/Part02_04.ComparingNumbers/src/main/java/ComparingNumbers.java' },
-    { name: 'Part02_05.CarryOn', className: 'CarryOn', path: 'Part_2/Part02_05.CarryOn/src/main/java/CarryOn.java' },
-    { name: 'Part02_06.AreWeThereYet', className: 'AreWeThereYet', path: 'Part_2/Part02_06.AreWeThereYet/src/main/java/AreWeThereYet.java' },
-    { name: 'Part02_07.OnlyPositives', className: 'OnlyPositives', path: 'Part_2/Part02_07.OnlyPositives/src/main/java/OnlyPositives.java' },
-    { name: 'Part02_08.NumberOfNumbers', className: 'NumberOfNumbers', path: 'Part_2/Part02_08.NumberOfNumbers/src/main/java/NumberOfNumbers.java' },
-    { name: 'Part02_09.NumberOfNegativeNumbers', className: 'NumberOfNegativeNumbers', path: 'Part_2/Part02_09.NumberOfNegativeNumbers/src/main/java/NumberOfNegativeNumbers.java' },
-    { name: 'Part02_10.SumOfNumbers', className: 'SumOfNumbers', path: 'Part_2/Part02_10.SumOfNumbers/src/main/java/SumOfNumbers.java' },
-    { name: 'Part02_11.NumberAndSumOfNumbers', className: 'NumberAndSumOfNumbers', path: 'Part_2/Part02_11.NumberAndSumOfNumbers/src/main/java/NumberAndSumOfNumbers.java' },
-    { name: 'Part02_12.AverageOfNumbers', className: 'AverageOfNumbers', path: 'Part_2/Part02_12.AverageOfNumbers/src/main/java/AverageOfNumbers.java' },
-    { name: 'Part02_13.AverageOfPositiveNumbers', className: 'AverageOfPositiveNumbers', path: 'Part_2/Part02_13.AverageOfPositiveNumbers/src/main/java/AverageOfPositiveNumbers.java' },
-    { name: 'Part02_14.Counting', className: 'Counting', path: 'Part_2/Part02_14.Counting/src/main/java/Counting.java' },
-    { name: 'Part02_15.CountingToHundred', className: 'CountingToHundred', path: 'Part_2/Part02_15.CountingToHundred/src/main/java/CountingToHundred.java' },
-    { name: 'Part02_16.FromWhereToWhere', className: 'FromWhereToWhere', path: 'Part_2/Part02_16.FromWhereToWhere/src/main/java/FromWhereToWhere.java' },
-    { name: 'Part02_17.SumOfASequence', className: 'SumOfASequence', path: 'Part_2/Part02_17.SumOfASequence/src/main/java/SumOfASequence.java' },
-    { name: 'Part02_18.SumOfASequenceTheSequel', className: 'SumOfASequenceTheSequel', path: 'Part_2/Part02_18.SumOfASequenceTheSequel/src/main/java/SumOfASequenceTheSequel.java' },
-    { name: 'Part02_19.Factorial', className: 'Factorial', path: 'Part_2/Part02_19.Factorial/src/main/java/Factorial.java' },
-    { name: 'Part02_20.RepeatingBreakingAndRemembering', className: 'RepeatingBreakingAndRemembering', path: 'Part_2/Part02_20.RepeatingBreakingAndRemembering/src/main/java/RepeatingBreakingAndRemembering.java' },
-    { name: 'Part02_21.InAHoleInTheGround', className: 'InAHoleInTheGround', path: 'Part_2/Part02_21.InAHoleInTheGround/src/main/java/InAHoleInTheGround.java' },
-    { name: 'Part02_22.Reprint', className: 'Reprint', path: 'Part_2/Part02_22.Reprint/src/main/java/Reprint.java' },
-    { name: 'Part02_23.FromOneToParameter', className: 'FromOneToParameter', path: 'Part_2/Part02_23.FromOneToParameter/src/main/java/FromOneToParameter.java' },
-    { name: 'Part02_24.FromParameterToOne', className: 'FromParameterToOne', path: 'Part_2/Part02_24.FromParameterToOne/src/main/java/FromParameterToOne.java' },
-    { name: 'Part02_25.Division', className: 'Division', path: 'Part_2/Part02_25.Division/src/main/java/Division.java' },
-    { name: 'Part02_26.DivisibleByThree', className: 'DivisibleByThree', path: 'Part_2/Part02_26.DivisibleByThree/src/main/java/DivisibleByThree.java' },
-    { name: 'Part02_27.NumberUno', className: 'NumberUno', path: 'Part_2/Part02_27.NumberUno/src/main/java/NumberUno.java' },
-    { name: 'Part02_28.Word', className: 'Word', path: 'Part_2/Part02_28.Word/src/main/java/Word.java' },
-    { name: 'Part02_29.Summation', className: 'Summation', path: 'Part_2/Part02_29.Summation/src/main/java/Summation.java' },
-    { name: 'Part02_30.Smallest', className: 'Smallest', path: 'Part_2/Part02_30.Smallest/src/main/java/Smallest.java' },
-    { name: 'Part02_31.Greatest', className: 'Greatest', path: 'Part_2/Part02_31.Greatest/src/main/java/Greatest.java' },
-    { name: 'Part02_32.Averaging', className: 'Averaging', path: 'Part_2/Part02_32.Averaging/src/main/java/Averaging.java' },
-    { name: 'Part02_33.StarSign', className: 'StarSign', path: 'Part_2/Part02_33.StarSign/src/main/java/StarSign.java' },
-    { name: 'Part02_34.AdvancedAstrology', className: 'AdvancedAstrology', path: 'Part_2/Part02_34.AdvancedAstrology/src/main/java/AdvancedAstrology.java' }
-  ],
-  'Part_3': [
-    { name: 'Part03_01.ThirdElement', className: 'ThirdElement', path: 'Part_3/Part03_01.ThirdElement/src/main/java/ThirdElement.java' },
-    { name: 'Part03_02.SecondPlusThird', className: 'SecondPlusThird', path: 'Part_3/Part03_02.SecondPlusThird/src/main/java/SecondPlusThird.java' },
-    { name: 'Part03_03.IndexOutOfBoundsException', className: 'IndexOutOfBoundsException', path: 'Part_3/Part03_03.IndexOutOfBoundsException/src/main/java/IndexOutOfBoundsException.java' },
-    { name: 'Part03_04.ListSize', className: 'ListSize', path: 'Part_3/Part03_04.ListSize/src/main/java/ListSize.java' },
-    { name: 'Part03_05.LastInList', className: 'LastInList', path: 'Part_3/Part03_05.LastInList/src/main/java/LastInList.java' },
-    { name: 'Part03_06.FirstAndLast', className: 'FirstAndLast', path: 'Part_3/Part03_06.FirstAndLast/src/main/java/FirstAndLast.java' },
-    { name: 'Part03_07.RememberTheseNumbers', className: 'RememberTheseNumbers', path: 'Part_3/Part03_07.RememberTheseNumbers/src/main/java/RememberTheseNumbers.java' },
-    { name: 'Part03_08.OnlyTheseNumbers', className: 'OnlyTheseNumbers', path: 'Part_3/Part03_08.OnlyTheseNumbers/src/main/java/OnlyTheseNumbers.java' },
-    { name: 'Part03_09.GreatestInList', className: 'GreatestInList', path: 'Part_3/Part03_09.GreatestInList/src/main/java/GreatestInList.java' },
-    { name: 'Part03_10.IndexOf', className: 'IndexOf', path: 'Part_3/Part03_10.IndexOf/src/main/java/IndexOf.java' },
-    { name: 'Part03_11.IndexOfSmallest', className: 'IndexOfSmallest', path: 'Part_3/Part03_11.IndexOfSmallest/src/main/java/IndexOfSmallest.java' },
-    { name: 'Part03_12.SumOfAList', className: 'SumOfAList', path: 'Part_3/Part03_12.SumOfAList/src/main/java/SumOfAList.java' },
-    { name: 'Part03_13.AverageOfAList', className: 'AverageOfAList', path: 'Part_3/Part03_13.AverageOfAList/src/main/java/AverageOfAList.java' },
-    { name: 'Part03_14.OnTheList', className: 'OnTheList', path: 'Part_3/Part03_14.OnTheList/src/main/java/OnTheList.java' },
-    { name: 'Part03_15.PrintInRange', className: 'PrintInRange', path: 'Part_3/Part03_15.PrintInRange/src/main/java/PrintInRange.java' },
-    { name: 'Part03_16.Sum', className: 'Sum', path: 'Part_3/Part03_16.Sum/src/main/java/Sum.java' },
-    { name: 'Part03_17.RemoveLast', className: 'RemoveLast', path: 'Part_3/Part03_17.RemoveLast/src/main/java/RemoveLast.java' },
-    { name: 'Part03_18.Swap', className: 'Swap', path: 'Part_3/Part03_18.Swap/src/main/java/Swap.java' },
-    { name: 'Part03_19.IndexWasNotFound', className: 'IndexWasNotFound', path: 'Part_3/Part03_19.IndexWasNotFound/src/main/java/IndexWasNotFound.java' },
-    { name: 'Part03_20.SumOfArray', className: 'SumOfArray', path: 'Part_3/Part03_20.SumOfArray/src/main/java/SumOfArray.java' },
-    { name: 'Part03_21.PrintNeatly', className: 'PrintNeatly', path: 'Part_3/Part03_21.PrintNeatly/src/main/java/PrintNeatly.java' },
-    { name: 'Part03_22.PrintInStars', className: 'PrintInStars', path: 'Part_3/Part03_22.PrintInStars/src/main/java/PrintInStars.java' },
-    { name: 'Part03_23.PrintThrice', className: 'PrintThrice', path: 'Part_3/Part03_23.PrintThrice/src/main/java/PrintThrice.java' },
-    { name: 'Part03_24.IsItTrue', className: 'IsItTrue', path: 'Part_3/Part03_24.IsItTrue/src/main/java/IsItTrue.java' },
-    { name: 'Part03_25.Login', className: 'Login', path: 'Part_3/Part03_25.Login/src/main/java/Login.java' },
-    { name: 'Part03_26.LineByLine', className: 'LineByLine', path: 'Part_3/Part03_26.LineByLine/src/main/java/LineByLine.java' },
-    { name: 'Part03_27.AVClub', className: 'AVClub', path: 'Part_3/Part03_27.AVClub/src/main/java/AVClub.java' },
-    { name: 'Part03_28.FirstWords', className: 'FirstWords', path: 'Part_3/Part03_28.FirstWords/src/main/java/FirstWords.java' },
-    { name: 'Part03_29.LastWords', className: 'LastWords', path: 'Part_3/Part03_29.LastWords/src/main/java/LastWords.java' },
-    { name: 'Part03_30.AgeOfTheOldest', className: 'AgeOfTheOldest', path: 'Part_3/Part03_30.AgeOfTheOldest/src/main/java/AgeOfTheOldest.java' },
-    { name: 'Part03_31.NameOfTheOldest', className: 'NameOfTheOldest', path: 'Part_3/Part03_31.NameOfTheOldest/src/main/java/NameOfTheOldest.java' },
-    { name: 'Part03_32.PersonalDetails', className: 'PersonalDetails', path: 'Part_3/Part03_32.PersonalDetails/src/main/java/PersonalDetails.java' }
-  ],
-  'Part_4': [
-    { name: 'Part04_01.YourFirstAccount', className: 'YourFirstAccount', path: 'Part_4/Part04_01.YourFirstAccount/src/main/java/YourFirstAccount.java' },
-    { name: 'Part04_02.YourFirstBankTransfer', className: 'YourFirstBankTransfer', path: 'Part_4/Part04_02.YourFirstBankTransfer/src/main/java/YourFirstBankTransfer.java' },
-    { name: 'Part04_03.DogAttributes', className: 'DogAttributes', path: 'Part_4/Part04_03.DogAttributes/src/main/java/DogAttributes.java' },
-    { name: 'Part04_04.Room', className: 'Room', path: 'Part_4/Part04_04.Room/src/main/java/Room.java' },
-    { name: 'Part04_05.Whistle', className: 'Whistle', path: 'Part_4/Part04_05.Whistle/src/main/java/Whistle.java' },
-    { name: 'Part04_06.Door', className: 'Door', path: 'Part_4/Part04_06.Door/src/main/java/Door.java' },
-    { name: 'Part04_07.Product', className: 'Product', path: 'Part_4/Part04_07.Product/src/main/java/Product.java' },
-    { name: 'Part04_08.DecreasingCounter', className: 'DecreasingCounter', path: 'Part_4/Part04_08.DecreasingCounter/src/main/java/DecreasingCounter.java' },
-    { name: 'Part04_09.Debt', className: 'Debt', path: 'Part_4/Part04_09.Debt/src/main/java/Debt.java' },
-    { name: 'Part04_10.Song', className: 'Song', path: 'Part_4/Part04_10.Song/src/main/java/Song.java' },
-    { name: 'Part04_11.Film', className: 'Film', path: 'Part_4/Part04_11.Film/src/main/java/Film.java' },
-    { name: 'Part04_12.Gauge', className: 'Gauge', path: 'Part_4/Part04_12.Gauge/src/main/java/Gauge.java' },
-    { name: 'Part04_13.Agent', className: 'Agent', path: 'Part_4/Part04_13.Agent/src/main/java/Agent.java' },
-    { name: 'Part04_14.Multiplier', className: 'Multiplier', path: 'Part_4/Part04_14.Multiplier/src/main/java/Multiplier.java' },
-    { name: 'Part04_15.NumberStatistics', className: 'NumberStatistics', path: 'Part_4/Part04_15.NumberStatistics/src/main/java/NumberStatistics.java' },
-    { name: 'Part04_16.PaymentCard', className: 'PaymentCard', path: 'Part_4/Part04_16.PaymentCard/src/main/java/PaymentCard.java' },
-    { name: 'Part04_17.Items', className: 'Items', path: 'Part_4/Part04_17.Items/src/main/java/Items.java' },
-    { name: 'Part04_18.PersonalInformation', className: 'PersonalInformation', path: 'Part_4/Part04_18.PersonalInformation/src/main/java/PersonalInformation.java' },
-    { name: 'Part04_19.TelevisionPrograms', className: 'TelevisionPrograms', path: 'Part_4/Part04_19.TelevisionPrograms/src/main/java/TelevisionPrograms.java' },
-    { name: 'Part04_20.Books', className: 'Books', path: 'Part_4/Part04_20.Books/src/main/java/Books.java' },
-    { name: 'Part04_21.NumberOfStrings', className: 'NumberOfStrings', path: 'Part_4/Part04_21.NumberOfStrings/src/main/java/NumberOfStrings.java' },
-    { name: 'Part04_22.Cubes', className: 'Cubes', path: 'Part_4/Part04_22.Cubes/src/main/java/Cubes.java' },
-    { name: 'Part04_23.CreatingANewFile', className: 'CreatingANewFile', path: 'Part_4/Part04_23.CreatingANewFile/src/main/java/CreatingANewFile.java' },
-    { name: 'Part04_24.PrintingAFile', className: 'PrintingAFile', path: 'Part_4/Part04_24.PrintingAFile/src/main/java/PrintingAFile.java' },
-    { name: 'Part04_25.PrintingASpecifiedFile', className: 'PrintingASpecifiedFile', path: 'Part_4/Part04_25.PrintingASpecifiedFile/src/main/java/PrintingASpecifiedFile.java' },
-    { name: 'Part04_26.GuestListFromAFile', className: 'GuestListFromAFile', path: 'Part_4/Part04_26.GuestListFromAFile/src/main/java/GuestListFromAFile.java' },
-    { name: 'Part04_27.IsItInTheFile', className: 'IsItInTheFile', path: 'Part_4/Part04_27.IsItInTheFile/src/main/java/IsItInTheFile.java' },
-    { name: 'Part04_28.NumbersFromAFile', className: 'NumbersFromAFile', path: 'Part_4/Part04_28.NumbersFromAFile/src/main/java/NumbersFromAFile.java' },
-    { name: 'Part04_29.RecordsFromAFile', className: 'RecordsFromAFile', path: 'Part_4/Part04_29.RecordsFromAFile/src/main/java/RecordsFromAFile.java' },
-    { name: 'Part04_30.StoringRecords', className: 'StoringRecords', path: 'Part_4/Part04_30.StoringRecords/src/main/java/StoringRecords.java' },
-    { name: 'Part04_31.SportStatistics', className: 'SportStatistics', path: 'Part_4/Part04_31.SportStatistics/src/main/java/SportStatistics.java' }
-  ],
-  'Part_5': [
-    { name: 'Part05_01.OneMinute', className: 'OneMinute', path: 'Part_5/Part05_01.OneMinute/src/main/java' },
-    { name: 'Part05_02.Book', className: 'Book', path: 'Part_5/Part05_02.Book/src/main/java' },
-    { name: 'Part05_03.Cube', className: 'Cube', path: 'Part_5/Part05_03.Cube/src/main/java' },
-    { name: 'Part05_04.FitByte', className: 'FitByte', path: 'Part_5/Part05_04.FitByte/src/main/java' },
-    { name: 'Part05_05.ConstructorOverload', className: 'ConstructorOverload', path: 'Part_5/Part05_05.ConstructorOverload/src/main/java' },
-    { name: 'Part05_06.OverloadedCounter', className: 'OverloadedCounter', path: 'Part_5/Part05_06.OverloadedCounter/src/main/java' },
-    { name: 'Part05_07.NullPointerException', className: 'NullPointerException', path: 'Part_5/Part05_07.NullPointerException/src/main/java' },
-    { name: 'Part05_08.BiggestPetShop', className: 'BiggestPetShop', path: 'Part_5/Part05_08.BiggestPetShop/src/main/java' },
-    { name: 'Part05_09.HealthStation', className: 'HealthStation', path: 'Part_5/Part05_09.HealthStation/src/main/java' },
-    { name: 'Part05_10.CardPayments', className: 'CardPayments', path: 'Part_5/Part05_10.CardPayments/src/main/java' },
-    { name: 'Part05_11.ComparingApartments', className: 'ComparingApartments', path: 'Part_5/Part05_11.ComparingApartments/src/main/java' },
-    { name: 'Part05_12.Song', className: 'Song', path: 'Part_5/Part05_12.Song/src/main/java' },
-    { name: 'Part05_13.IdenticalTwins', className: 'IdenticalTwins', path: 'Part_5/Part05_13.IdenticalTwins/src/main/java' },
-    { name: 'Part05_14.Books', className: 'Books', path: 'Part_5/Part05_14.Books/src/main/java' },
-    { name: 'Part05_15.Archive', className: 'Archive', path: 'Part_5/Part05_15.Archive/src/main/java' },
-    { name: 'Part05_16.DatingApp', className: 'DatingApp', path: 'Part_5/Part05_16.DatingApp/src/main/java' },
-    { name: 'Part05_17.Money', className: 'Money', path: 'Part_5/Part05_17.Money/src/main/java' }
-  ],
-  'Part_6': [
-    { name: 'Part06_01.Menu', className: 'Menu', path: 'Part_6/Part06_01.Menu/src/main/java' },
-    { name: 'Part06_02.Stack', className: 'Stack', path: 'Part_6/Part06_02.Stack/src/main/java' },
-    { name: 'Part06_03.MessagingService', className: 'MessagingService', path: 'Part_6/Part06_03.MessagingService/src/main/java' },
-    { name: 'Part06_04.PrintingACollection', className: 'PrintingACollection', path: 'Part_6/Part06_04.PrintingACollection/src/main/java' },
-    { name: 'Part06_05.SantasWorkshop', className: 'SantasWorkshop', path: 'Part_6/Part06_05.SantasWorkshop/src/main/java' }
-  ]
-};
-
-// Função para obter o link direto do arquivo no GitHub
-function getGithubFileUrl(path) {
-  return `https://github.com/matheussricardoo/java-programming1-mooc-helsinki/blob/main/${path}`;
-}
-
-// Função para obter o link raw do arquivo
-function getRawFileUrl(path) {
-  return `https://raw.githubusercontent.com/matheussricardoo/java-programming1-mooc-helsinki/main/${path}`;
-}
-
-// Função para criar o link do JDoodle com o código
-function createJDoodleLink(exercise) {
-  return `https://www.jdoodle.com/embed/v0/0?stdin=0&arg=0&rw=1&source=${encodeURIComponent(
-    `// ${exercise.name}\n` +
-    `// Link: ${getGithubFileUrl(exercise.path)}\n\n` +
-    `// O código será carregado automaticamente aqui\n` +
-    `public class ${exercise.className} {\n` +
-    `    public static void main(String[] args) {\n` +
-    `        // Seu código aqui\n` +
-    `    }\n` +
-    `}`
-  )}&libs=0&testcases=&title=${encodeURIComponent(exercise.name)}`;
-}
 
 // Componente de Barra de Pesquisa
 function SearchBar({ onSearch }) {
@@ -249,25 +55,124 @@ function SearchBar({ onSearch }) {
 export default function MoocContent() {
   const { t } = useLanguage();
   const [selectedPart, setSelectedPart] = useState(PARTS[0]);
-  const [exercises, setExercises] = useState(EXERCISES[PARTS[0].path]);
-  const [loading, setLoading] = useState(false);
+  const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    setLoading(true);
-    if (selectedPart.path === 'all') {
-      const allExercises = Object.values(EXERCISES).flat();
-      setExercises(allExercises);
-    } else {
-      setExercises(EXERCISES[selectedPart.path]);
+    async function fetchExercises() {
+      try {
+        setLoading(true);
+        let exerciseList = [];
+
+        if (selectedPart.path === 'all') {
+          // Buscar exercícios de todas as partes
+          for (const part of PARTS) {
+            const response = await fetch(`https://api.github.com/repos/matheussricardoo/java-programming1-mooc-helsinki/contents/${part.path}`);
+            if (response.ok) {
+              const files = await response.json();
+              const partExercises = files
+                .filter(file => file.type === 'dir')
+                .map(file => {
+                  const exercise = {
+                    name: file.name,
+                    className: file.name.split('.')[1],
+                    path: `${part.path}/${file.name}/src/main/java`,
+                    url: file.html_url
+                  };
+
+                  // Adicionar URL do código para Part 1, 2 e 3
+                  if (['Part_1', 'Part_2', 'Part_3'].includes(part.path)) {
+                    exercise.codeUrl = `https://raw.githubusercontent.com/matheussricardoo/java-programming1-mooc-helsinki/main/${part.path}/${file.name}/src/main/java/${exercise.className}.java`;
+                  }
+
+                  return exercise;
+                });
+              exerciseList = [...exerciseList, ...partExercises];
+            }
+          }
+        } else {
+          const response = await fetch(`https://api.github.com/repos/matheussricardoo/java-programming1-mooc-helsinki/contents/${selectedPart.path}`);
+          
+          if (!response.ok) throw new Error('Failed to fetch');
+          
+          const files = await response.json();
+          exerciseList = files
+            .filter(file => file.type === 'dir')
+            .map(file => {
+              const exercise = {
+                name: file.name,
+                className: file.name.split('.')[1],
+                path: `${selectedPart.path}/${file.name}/src/main/java`,
+                url: file.html_url
+              };
+
+              // Adicionar URL do código para Part 1, 2 e 3
+              if (['Part_1', 'Part_2', 'Part_3'].includes(selectedPart.path)) {
+                exercise.codeUrl = `https://raw.githubusercontent.com/matheussricardoo/java-programming1-mooc-helsinki/main/${selectedPart.path}/${file.name}/src/main/java/${exercise.className}.java`;
+              }
+
+              return exercise;
+            });
+        }
+
+        setExercises(exerciseList);
+      } catch (error) {
+        console.error('Erro ao buscar exercícios:', error);
+        setExercises([]);
+      } finally {
+        setLoading(false);
+      }
     }
-    setLoading(false);
+
+    fetchExercises();
   }, [selectedPart]);
+
+  // Função para obter o link direto do arquivo no GitHub
+  function getGithubFileUrl(path) {
+    return `https://github.com/matheussricardoo/java-programming1-mooc-helsinki/blob/main/${path}`;
+  }
+
+  // Função para criar o link do JDoodle com o código
+  async function createJDoodleLink(exercise) {
+    let sourceCode = '';
+
+    if (exercise.codeUrl) {
+      try {
+        const response = await fetch(exercise.codeUrl);
+        if (response.ok) {
+          sourceCode = await response.text();
+        }
+      } catch (error) {
+        console.error('Erro ao buscar código:', error);
+      }
+    }
+
+    if (!sourceCode) {
+      sourceCode = `// ${exercise.name}\n` +
+        `// Link: ${getGithubFileUrl(exercise.path)}\n\n` +
+        `public class ${exercise.className} {\n` +
+        `    public static void main(String[] args) {\n` +
+        `        // Seu código aqui\n` +
+        `    }\n` +
+        `}`;
+    }
+
+    // Retorna o link direto para o JDoodle
+    return `https://www.jdoodle.com/online-java-compiler/?code=${encodeURIComponent(sourceCode)}`;
+  }
 
   // Filtrar exercícios baseado na pesquisa
   const filteredExercises = exercises.filter(exercise =>
     exercise.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  // Adicione esta função no componente
+  const handleJDoodleClick = async (e, exercise) => {
+    e.preventDefault();
+    const jdoodleUrl = await createJDoodleLink(exercise);
+    window.open(jdoodleUrl, '_blank');
+  };
 
   return (
     <motion.div
@@ -384,10 +289,9 @@ export default function MoocContent() {
                     </Link>
 
                     {/* Link para testar */}
-                    <Link
-                      href={createJDoodleLink(exercise)}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <a
+                      href="#"
+                      onClick={(e) => handleJDoodleClick(e, exercise)}
                       className="flex items-center justify-between px-4 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group"
                     >
                       <span className="text-sm text-gray-700 dark:text-gray-300 flex items-center gap-2">
@@ -396,10 +300,10 @@ export default function MoocContent() {
                         </svg>
                         <span className="truncate">{t.testIn} JDoodle</span>
                       </span>
-                      <svg className="w-4 h-4 flex-shrink-0 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-500 dark:text-gray-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </motion.div>
