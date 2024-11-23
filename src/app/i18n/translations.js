@@ -23,6 +23,7 @@ export const translations = {
     noDescription: 'Sem descrição disponível',
     pokedexDesc: 'Uma Pokédex inspirada no Game Boy construída com Next.js e TailwindCSS, apresentando um design retrô, suporte bilíngue (EN/PT-BR) e recursos interativos como comparação de Pokémon e modo quiz "Quem é esse Pokémon?". Experimente a nostalgia da era Game Boy com tecnologias web modernas.',
     cryptoDashboardDesc: 'Dashboard de criptomoedas construído com Next.js e TailwindCSS. Apresenta dados em tempo real, gráficos interativos, calculadora de conversão, comparação de criptomoedas e filtros avançados para análise de mercado.',
+    focusFlowDesc: 'Temporizador Pomodoro minimalista com recursos de som ambiente, modo não perturbe e estatísticas de foco. Desenvolvido com Next.js e TailwindCSS, oferece uma experiência limpa e intuitiva para gerenciar seus ciclos de trabalho e descanso.',
     
     // Filtros
     all: 'Todos',
@@ -67,6 +68,7 @@ export const translations = {
     noDescription: 'No description available',
     pokedexDesc: "A Game Boy-inspired Pokédex built with Next.js and TailwindCSS, featuring a retro design, bilingual support (EN/PT-BR), and interactive features like Pokémon comparison and \"Who's that Pokémon?\" quiz mode. Experience the nostalgia of the Game Boy era with modern web technologies.",
     cryptoDashboardDesc: 'Cryptocurrency dashboard built with Next.js and TailwindCSS. Features real-time data, interactive charts, conversion calculator, cryptocurrency comparison, and advanced filters for market analysis.',
+    focusFlowDesc: 'A minimalist Pomodoro timer with ambient sound features, do not disturb mode, and focus statistics. Built with Next.js and TailwindCSS, it provides a clean and intuitive experience for managing your work and rest cycles.',
     
     // Filters
     all: 'All',
