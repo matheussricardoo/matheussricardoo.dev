@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/fluency-systems-filled/48/m.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="cursor-dot" data-cursor-dot></div>
+
     <header>
         <nav>
             <div class="logo">Meu Portfólio</div>
@@ -35,6 +38,7 @@
 
         <section id="projects">
             <h2>Projetos</h2>
+            <div id="filter-buttons"></div>
             <div id="projects-container"></div>
         </section>
 
@@ -53,5 +57,6 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script src="cursor.js"></script>
 </body>
 </html>

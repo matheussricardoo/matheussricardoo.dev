@@ -5,21 +5,23 @@
 :root {
     --font-family: 'Poppins', sans-serif;
 
-    /* Tema Claro */
-    --light-bg: #f0f2f5;
-    --light-text: #1c1e21;
+    /* Nova Paleta - Tema Claro */
+    --light-bg: #f5f7fa;
+    --light-text: #334155;
     --light-card-bg: #ffffff;
     --light-header-bg: #ffffff;
-    --light-shadow: rgba(0, 0, 0, 0.1);
+    --light-shadow: rgba(0, 0, 0, 0.08);
     --primary-color: #007bff;
     --primary-hover-color: #0056b3;
 
-    /* Tema Escuro */
-    --dark-bg: #18191a;
-    --dark-text: #e4e6eb;
-    --dark-card-bg: #242526;
-    --dark-header-bg: #242526;
-    --dark-shadow: rgba(0, 0, 0, 0.3);
+    /* Nova Paleta - Tema Escuro */
+    --dark-bg: #0a192f;
+    --dark-text: #ccd6f6;
+    --dark-card-bg: #112240;
+    --dark-header-bg: #0a192f;
+    --dark-shadow: rgba(0, 0, 0, 0.5);
+    --primary-color-dark: #64ffda; /* Verde-água */
+    --primary-hover-color-dark: #52d9bc;
 }
 
 /* Estilos gerais */
@@ -28,6 +30,8 @@ body {
     margin: 0;
     transition: background-color 0.3s, color 0.3s;
     line-height: 1.6;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
 }
 
 /* Tema Claro (Padrão) */
@@ -40,6 +44,7 @@ body.light-theme {
 body.dark-theme {
     background-color: var(--dark-bg);
     color: var(--dark-text);
+    scrollbar-color: var(--primary-color-dark) transparent;
 }
 
 /* Header e Navegação */
@@ -107,20 +112,63 @@ body.dark-theme .nav-links a {
 }
 
 #theme-toggle, #lang-toggle {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     cursor: pointer;
     font-family: var(--font-family);
     font-weight: 600;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme #theme-toggle, 
+body.dark-theme #lang-toggle {
+    color: var(--primary-color-dark);
+    border-color: var(--primary-color-dark);
 }
 
 #theme-toggle:hover, #lang-toggle:hover {
-    background-color: var(--primary-hover-color);
+    background-color: var(--primary-color);
+    color: white;
 }
+
+body.dark-theme #theme-toggle:hover,
+body.dark-theme #lang-toggle:hover {
+    background-color: var(--primary-color-dark);
+    color: var(--dark-bg);
+}
+
+/* Estilização da Barra de Rolagem - Novo Design */
+/* Para navegadores Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* Fundo transparente */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color-dark);
+}
+
+/* Para Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+body.dark-theme {
+    scrollbar-color: var(--primary-color-dark) transparent;
+}
+
 
 /* Conteúdo Principal */
 main {
@@ -174,12 +222,51 @@ body.dark-theme .hero-title {
     font-size: 1.25rem;
     font-weight: 300;
     margin-bottom: 2rem;
+    color: #8892b0; /* Cor mais suave para o subtítulo */
 }
 
 section {
     margin-bottom: 4rem;
     padding-top: 4rem;
 }
+
+/* Botões de Filtro */
+#filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+body.dark-theme .filter-btn {
+    border-color: var(--primary-color-dark);
+    color: var(--primary-color-dark);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+body.dark-theme .filter-btn:hover,
+body.dark-theme .filter-btn.active {
+    background-color: var(--primary-color-dark);
+    color: var(--dark-bg);
+}
+
 
 /* Container de Projetos */
 #projects-container {
@@ -304,4 +391,42 @@ body.light-theme footer {
 
 body.dark-theme footer {
     background-color: var(--dark-header-bg);
+}
+
+/* Estilos do Cursor Customizado - REVISADO */
+.cursor-dot {
+    pointer-events: none;
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    background-color: var(--primary-color);
+    transition: transform 0.2s ease-in-out, background-color 0.2s, border-color 0.2s;
+}
+
+.cursor-dot.hover {
+    transform: translate(-50%, -50%) scale(4);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+}
+
+.cursor-outline {
+    display: none;
+}
+
+/* Cores para o Tema Escuro */
+body.dark-theme .cursor-dot {
+    background-color: var(--primary-color-dark);
+}
+
+body.dark-theme .cursor-dot.hover {
+    border-color: var(--primary-color-dark);
+    background-color: transparent;
+}
+
+/* Esconder o cursor padrão */
+body {
+    cursor: none;
 }
