@@ -1,0 +1,80 @@
+
+{
+    "header": {
+        "title": "Dev Matheus",
+        "home": "Início",
+        "work": "Experiência",
+        "projects": "Projetos",
+        "skills": "Habilidades",
+        "blog": "Blog"
+    },
+    "footer": {
+        "text": "Todos os Direitos Reservados."
+    },
+    "titles": {
+        "home": "Início | Matheus Ricardo",
+        "work": "Experiência Profissional | Matheus Ricardo",
+        "projects": "Projetos | Matheus Ricardo",
+        "skills": "Habilidades | Matheus Ricardo",
+        "blog": "Blog | Matheus Ricardo"
+    },
+    "home": {
+        "name": "Matheus Ricardo",
+        "title": "Desenvolvedor de Software",
+        "description": [
+            "Olá, meu nome é Matheus Ricardo. Sou um desenvolvedor de software em formação, apaixonado por tecnologia e motivado pelo aprendizado contínuo para resolver problemas complexos.",
+            "Atualmente estou cursando Bacharelado em Sistemas de Informação na Universidade Presbiteriana Mackenzie. Sou motivado por desafios que abrangem o ciclo completo de desenvolvimento de software, desde a concepção de um aplicativo até sua infraestrutura escalável em nuvem.",
+            "Gosto de transformar protótipos em código funcional e robusto, com foco em criar soluções de alto impacto, como demonstrei em projetos e hackathons de inovação. Seja bem-vindo ao meu portfólio!",
+            "Aqui você encontrará um pouco mais sobre minha jornada, competências e os projetos mais relevantes que desenvolvi."
+        ]
+    },
+    "work": {
+        "title": "Experiência Profissional",
+        "experiences": [
+            {
+                "role": "Junior Learner",
+                "company": "APPLE DEVELOPER ACADEMY MACKENZIE",
+                "period": "Fev 2025 - Jul 2025",
+                "description": [
+                    "Atuação no ciclo completo de desenvolvimento de aplicativos iOS, desde a concepção de ideias até a publicação. Fui responsável pela tradução de wireframes e protótipos de interface (UI/UX) em código funcional e robusto. Realizei a programação de todas as funcionalidades do aplicativo, culminando na preparação e submissão bem-sucedida do app para a App Store.",
+                    "Projeto: <a href='https://apps.apple.com/br/app/dboard/id6747050797' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>DBoard</a>"
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projetos",
+        "live_demo": "Demo ao Vivo",
+        "source": "Código Fonte",
+        "all_projects": "Todos"
+    },
+    "skills": {
+        "title": "Habilidades",
+        "categories": [
+            {
+                "title": "Linguagens de Programação",
+                "skills": ["Swift", "Python", "Java", "JavaScript", "HTML/CSS", "SQL"]
+            },
+            {
+                "title": "Frameworks e Bibliotecas",
+                "skills": ["SwiftUI", "React", "Spring Boot"]
+            },
+            {
+                "title": "Plataformas de Nuvem",
+                "skills": ["Amazon Web Services (AWS)", "Google Cloud Platform (GCP)"]
+            },
+            {
+                "title": "Ferramentas de Desenvolvimento",
+                "skills": ["Git (Controle de Versão)", "Figma (Prototipagem)"]
+            },
+            {
+                "title": "Metodologias",
+                "skills": ["Metodologias Ágeis (Scrum, Kanban)"]
+            },
+            {
+                "title": "Software",
+                "skills": ["Pacote Microsoft Office"]
+            }
+        ]
+    }
+}

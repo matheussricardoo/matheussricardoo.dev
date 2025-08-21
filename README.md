@@ -1,13 +1,13 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7F5AF0&height=200&section=header&text=Matheus%20Ricardo&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=40&desc=Developer%20Portfolio%20|%20JavaScript%20|%20HTML%20|%20CSS&descAlignY=60&descSize=18">
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=003366&height=200&section=header&text=Portfólio&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=40&desc=Next.js%20|%20React%20|%20TypeScript%20|%20TailwindCSS&descAlignY=60&descSize=18">
 
 <p align="center">
-  <i>🚀 A minimalist and modern portfolio to showcase my projects, with a focus on a clean user experience and cool animations.</i>
+  <i>🚀 A minimalist and modern portfolio to showcase my projects, built with Next.js and featuring a clean user experience.</i>
 </p>
 
 <p align="center">
-  <i>🚀 Um portfólio minimalista e moderno para exibir meus projetos, com foco em uma experiência de usuário limpa e animações incríveis.</i>
+  <i>🚀 Um portfólio minimalista e moderno para exibir meus projetos, construído com Next.js e focado em uma experiência de usuário limpa.</i>
 </p>
 
 ---
@@ -18,12 +18,11 @@
 
 | Feature | Description | Descrição |
 |:---:|:---|:---|
-| 🎨 | Light/Dark Theme | Tema Claro/Escuro |
 | 🌐 | Bilingual (PT-BR/EN) | Suporte Bilíngue (PT-BR/EN) |
-| 깃 | GitHub API Integration | Integração com a API do GitHub |
-| ✨ | Interactive Particle Background | Fundo Interativo de Partículas |
+| 🗂️ | GitHub API Integration | Integração com a API do GitHub |
+| 🔎 | Project Filtering | Filtragem de Projetos |
 | 📱 | Fully Responsive Design | Design Totalmente Responsivo |
-| 🖱️ | Scroll Reveal Animations | Animações de Rolagem |
+| ✨ | Modern UI with Animations | UI Moderna com Animações |
 
 </div>
 
@@ -31,7 +30,7 @@
 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind&theme=dark" />
   </a>
 </div>
 
@@ -40,13 +39,16 @@
 
 ```bash
 # Clone the repository | Clone o repositório
-git clone https://github.com/matheussricardoo/portfolio-dev.git
+git clone https://github.com/matheussricardoo/matheussricardoo.dev.git
 
 # Navigate to project directory | Navegue até o diretório do projeto
 cd portfolio-dev
 
-# Open in browser (preferably with a live server) | Abra no navegador (de preferência com um live server)
-open index.html
+# Install dependencies | Instale as dependências
+npm install
+
+# Run the development server | Execute o servidor de desenvolvimento
+npm run dev
 ```
 
 ### 👤 Author | Autor
@@ -66,6 +68,6 @@ This project is licensed under the MIT License.
 
 Este projeto está licenciado sob a Licença MIT.
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=7F5AF0&height=120&section=footer"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=003366&height=120&section=footer"/>
 
 </div>
