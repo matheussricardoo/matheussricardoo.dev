@@ -42,7 +42,7 @@
 git clone https://github.com/matheussricardoo/matheussricardoo.dev.git
 
 # Navigate to project directory | Navegue até o diretório do projeto
-cd portfolio-dev
+cd matheussricardoo.dev
 
 # Install dependencies | Instale as dependências
 npm install
