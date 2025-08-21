@@ -1,0 +1,80 @@
+
+{
+    "header": {
+        "title": "Dev Matheus",
+        "home": "Home",
+        "work": "Work",
+        "projects": "Projects",
+        "skills": "Skills",
+        "blog": "Blog"
+    },
+    "footer": {
+        "text": "All Rights Reserved."
+    },
+    "titles": {
+        "home": "Home | Matheus Ricardo",
+        "work": "Work Experience | Matheus Ricardo",
+        "projects": "Projects | Matheus Ricardo",
+        "skills": "Skills | Matheus Ricardo",
+        "blog": "Blog | Matheus Ricardo"
+    },
+    "home": {
+        "name": "Matheus Ricardo",
+        "title": "Software Developer",
+        "description": [
+            "Hello, my name is Matheus Ricardo. I am a software developer in training, passionate about technology and motivated by continuous learning to solve complex problems.",
+            "I am currently pursuing a Bachelor's degree in Information Systems at Mackenzie Presbyterian University. I am driven by challenges that span the entire software development cycle, from the conception of an application to its scalable cloud infrastructure.",
+            "I enjoy transforming prototypes into functional and robust code, focusing on creating high-impact solutions, as I have demonstrated in projects and innovation hackathons. Welcome to my portfolio!",
+            "Here you will find a little more about my journey, skills, and the most relevant projects I have developed."
+        ]
+    },
+    "work": {
+        "title": "Work Experience",
+        "experiences": [
+            {
+                "role": "Junior Learner",
+                "company": "APPLE DEVELOPER ACADEMY MACKENZIE",
+                "period": "Feb 2025 - Jul 2025",
+                "description": [
+                    "Involved in the complete development cycle of iOS applications, from idea conception to publication. I was responsible for translating wireframes and interface prototypes (UI/UX) into functional and robust code. I programmed all the application's features, culminating in the successful preparation and submission of the app to the App Store.",
+                    "Project: <a href='https://apps.apple.com/br/app/dboard/id6747050797' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>DBoard</a>"
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "title": "Projects",
+        "live_demo": "Live Demo",
+        "source": "Source",
+        "all_projects": "All"
+    },
+    "skills": {
+        "title": "Skills",
+        "categories": [
+            {
+                "title": "Programming Languages",
+                "skills": ["Swift", "Python", "Java", "JavaScript", "HTML/CSS", "SQL"]
+            },
+            {
+                "title": "Frameworks and Libraries",
+                "skills": ["SwiftUI", "React", "Spring Boot"]
+            },
+            {
+                "title": "Cloud Platforms",
+                "skills": ["Amazon Web Services (AWS)", "Google Cloud Platform (GCP)"]
+            },
+            {
+                "title": "Development Tools",
+                "skills": ["Git (Version Control)", "Figma (Prototyping)"]
+            },
+            {
+                "title": "Methodologies",
+                "skills": ["Agile Methodologies (Scrum, Kanban)"]
+            },
+            {
+                "title": "Software",
+                "skills": ["Microsoft Office Suite"]
+            }
+        ]
+    }
+}
