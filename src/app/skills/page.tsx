@@ -36,26 +36,26 @@ export default function SkillsPage() {
   return (
     <motion.section 
       id="skills" 
-      className="py-16 sm:py-24 bg-secondary/50 h-full"
+      className="py-8 sm:py-16 lg:py-24 bg-secondary/50 h-full"
       initial="initial"
       animate="animate"
       variants={fadeInAnimation}
     >
-      <div className="container">
-        <div className="flex items-center gap-4 mb-12">
-            <Wrench className="w-8 h-8 text-primary" />
-            <h2 className="font-headline text-3xl sm:text-4xl font-bold">{translations.skills.title}</h2>
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8 sm:mb-12">
+            <Wrench className="w-6 h-6 sm:w-8 sm:h-8 text-primary flex-shrink-0" />
+            <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold">{translations.skills.title}</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {skillCategories.map((category, i) => (
             <motion.div key={category.title} custom={i} initial="initial" animate="animate" variants={cardAnimation} className="flex">
               <Card className="flex flex-col w-full">
-                <CardHeader>
-                  <CardTitle className="font-headline text-xl">{category.title}</CardTitle>
+                <CardHeader className="p-4 sm:p-6">
+                  <CardTitle className="font-headline text-lg sm:text-xl">{category.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex flex-wrap gap-2 flex-grow">
+                <CardContent className="flex flex-wrap gap-1 sm:gap-2 flex-grow p-4 sm:p-6 pt-0">
                   {category.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="rounded-md">{skill}</Badge>
+                    <Badge key={skill} variant="secondary" className="rounded-md text-xs sm:text-sm">{skill}</Badge>
                   ))}
                 </CardContent>
               </Card>

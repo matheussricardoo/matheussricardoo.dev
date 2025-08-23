@@ -66,4 +66,56 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Improve text rendering and responsivity */
+  html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Better responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Better button and interactive element touch targets on mobile */
+  @media (max-width: 640px) {
+    button, 
+    [role="button"],
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better spacing for mobile */
+    h1 {
+      line-height: 1.2;
+    }
+    
+    h2 {
+      line-height: 1.3;
+    }
+    
+    /* Prevent horizontal scrolling */
+    body {
+      overflow-x: hidden;
+    }
+  }
+  
+  /* Ultra small screens (less than 375px) */
+  @media (max-width: 374px) {
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
 }
