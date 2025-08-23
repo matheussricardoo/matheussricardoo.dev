@@ -62,12 +62,6 @@ npm run dev
   </a>
 </div>
 
-### 📄 License | Licença
-
-This project is licensed under the MIT License.
-
-Este projeto está licenciado sob a Licença MIT.
-
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=003366&height=120&section=footer"/>
 
 </div>
