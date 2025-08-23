@@ -23,17 +23,21 @@ export default function PortfolioPage() {
       <main>
         <motion.section 
           id="about" 
-          className="container py-16 sm:py-24"
+          className="container py-8 sm:py-16 lg:py-24"
           initial="initial"
           animate="animate"
           variants={fadeInAnimation}
         >
-          <div className="text-center md:text-left">
-            <h1 className="font-headline text-4xl sm:text-5xl font-bold tracking-tight">{translations.home.name}</h1>
-            <h2 className="text-2xl font-medium text-primary mt-2">{translations.home.title}</h2>
-            <div className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto md:mx-0 space-y-4">
+          <div className="text-center md:text-left px-4 sm:px-6 lg:px-8">
+            <h1 className="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+              {translations.home.name}
+            </h1>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-primary mt-2 sm:mt-4">
+              {translations.home.title}
+            </h2>
+            <div className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto md:mx-0 space-y-3 sm:space-y-4">
               {translations.home.description.map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
+                <p key={index} className="leading-relaxed">{paragraph}</p>
               ))}
             </div>
           </div>

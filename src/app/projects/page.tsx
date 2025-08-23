@@ -75,22 +75,24 @@ export default function ProjectsPage() {
   return (
     <motion.section 
       id="projects" 
-      className="py-16 sm:py-24 h-full"
+      className="py-8 sm:py-16 lg:py-24 h-full"
       initial="initial"
       animate="animate"
       variants={fadeInAnimation}
     >
-      <div className="container">
-        <div className="flex items-center gap-4 mb-8">
-            <AppWindow className="w-8 h-8 text-primary" />
-            <h2 className="font-headline text-3xl sm:text-4xl font-bold">{translations.projects.title}</h2>
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6 sm:mb-8">
+            <AppWindow className="w-6 h-6 sm:w-8 sm:h-8 text-primary flex-shrink-0" />
+            <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold">{translations.projects.title}</h2>
         </div>
 
         {!loading && !error && allTopics.length > 0 && (
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 mb-8 sm:mb-12">
             <Button
               variant={selectedTopic === null ? 'default' : 'secondary'}
               onClick={() => setSelectedTopic(null)}
+              size="sm"
+              className="text-xs sm:text-sm"
             >
               {translations.projects.all_projects}
             </Button>
@@ -99,6 +101,8 @@ export default function ProjectsPage() {
                 key={topic}
                 variant={selectedTopic === topic ? 'default' : 'secondary'}
                 onClick={() => setSelectedTopic(topic)}
+                size="sm"
+                className="text-xs sm:text-sm"
               >
                 {topic}
               </Button>
@@ -107,56 +111,58 @@ export default function ProjectsPage() {
         )}
         
         {loading && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {Array.from({ length: 6 }).map((_, i) => (
               <Card key={i} className="flex flex-col">
-                <CardHeader>
-                  <Skeleton className="h-6 w-3/4" />
+                <CardHeader className="p-4 sm:p-6">
+                  <Skeleton className="h-5 sm:h-6 w-3/4" />
                 </CardHeader>
-                <CardContent className="flex-grow">
+                <CardContent className="flex-grow p-4 sm:p-6 pt-0">
                   <Skeleton className="h-4 w-full" />
                   <Skeleton className="h-4 w-full mt-2" />
                   <Skeleton className="h-4 w-1/2 mt-2" />
                 </CardContent>
-                <CardFooter className="flex justify-between items-end">
-                    <Skeleton className="h-10 w-24" />
-                    <Skeleton className="h-10 w-24" />
+                <CardFooter className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 p-4 sm:p-6">
+                    <Skeleton className="h-8 sm:h-10 w-20 sm:w-24" />
+                    <Skeleton className="h-8 sm:h-10 w-20 sm:w-24" />
                 </CardFooter>
               </Card>
             ))}
           </div>
         )}
 
-        {error && <p className="text-destructive text-center">{error}</p>}
+        {error && <p className="text-destructive text-center text-sm sm:text-base">{error}</p>}
 
         {!loading && !error && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {filteredProjects.map((project) => (
                 <Card key={project.id} className="flex flex-col">
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">{project.name}</CardTitle>
+                <CardHeader className="p-4 sm:p-6">
+                    <CardTitle className="font-headline text-lg sm:text-xl leading-tight">{project.name}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-grow space-y-4">
-                    <CardDescription>{project.description || 'No description available.'}</CardDescription>
-                    <div className="flex flex-wrap gap-2">
+                <CardContent className="flex-grow space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
+                    <CardDescription className="text-sm sm:text-base leading-relaxed">
+                      {project.description || 'No description available.'}
+                    </CardDescription>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {project.topics.map(topic => (
-                        <Badge key={topic} variant="outline">{topic}</Badge>
+                        <Badge key={topic} variant="outline" className="text-xs">{topic}</Badge>
                       ))}
                     </div>
                 </CardContent>
-                <CardFooter className="flex justify-between items-end pt-4">
-                    <div className="flex gap-2">
+                <CardFooter className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-2 sm:gap-4 pt-4 p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                         {project.homepage && (
-                            <Button asChild size="sm">
+                            <Button asChild size="sm" className="w-full sm:w-auto text-xs sm:text-sm">
                                 <a href={project.homepage} target="_blank" rel="noopener noreferrer">
-                                    <ExternalLink />
+                                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                                     {translations.projects.live_demo}
                                 </a>
                             </Button>
                         )}
-                        <Button asChild variant="secondary" size="sm">
+                        <Button asChild variant="secondary" size="sm" className="w-full sm:w-auto text-xs sm:text-sm">
                             <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-                                <Github />
+                                <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                                 {translations.projects.source}
                             </a>
                         </Button>

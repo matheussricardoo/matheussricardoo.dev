@@ -6,7 +6,9 @@
         "work": "Work",
         "projects": "Projects",
         "skills": "Skills",
-        "blog": "Blog"
+        "blog": "Blog",
+        "language": "Language",
+        "social": "Social"
     },
     "footer": {
         "text": "All Rights Reserved."
