@@ -48,7 +48,8 @@
         "title": "Projetos",
         "live_demo": "Demo ao Vivo",
         "source": "Código Fonte",
-        "all_projects": "Todos"
+        "all_projects": "Todos",
+        "live_demos": "Demos ao Vivo"
     },
     "skills": {
         "title": "Habilidades",

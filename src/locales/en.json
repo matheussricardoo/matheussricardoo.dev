@@ -48,7 +48,8 @@
         "title": "Projects",
         "live_demo": "Live Demo",
         "source": "Source",
-        "all_projects": "All"
+        "all_projects": "All",
+        "live_demos": "Live Demos"
     },
     "skills": {
         "title": "Skills",

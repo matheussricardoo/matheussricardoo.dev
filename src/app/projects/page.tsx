@@ -9,6 +9,7 @@ import { useState, useEffect, useMemo } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion } from "framer-motion";
 import { Badge } from '@/components/ui/badge';
+import type { Metadata } from 'next';
 
 interface Project {
   id: number;
@@ -19,11 +20,14 @@ interface Project {
   topics: string[];
 }
 
+type FilterType = 'all' | 'topic' | 'live';
+
 export default function ProjectsPage() {
   const { translations } = useLanguage();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
 
   useEffect(() => {
@@ -38,8 +42,20 @@ export default function ProjectsPage() {
           throw new Error('Failed to fetch projects');
         }
         const data = await response.json();
+        
+        const commitToLearnProject: Project = {
+          id: -1, // Using a unique ID
+          name: 'CommitToLearn Blog',
+          description: 'A personal blog to document studies and share knowledge about software development, technology, and career.',
+          html_url: 'https://github.com/committolearnn/CommitToLearn',
+          homepage: 'https://committolearnn.github.io/CommitToLearn/',
+          topics: ['Blog', 'GitHub Pages', 'Education']
+        };
+
         const sortedProjects = data.sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-        setProjects(sortedProjects);
+        
+        setProjects([commitToLearnProject, ...sortedProjects]);
+
       } catch (err) {
         if (err instanceof Error) {
             setError(err.message);
@@ -60,11 +76,24 @@ export default function ProjectsPage() {
   }, [projects]);
 
   const filteredProjects = useMemo(() => {
-    if (!selectedTopic) {
-      return projects;
+    if (activeFilter === 'live') {
+      return projects.filter(p => p.homepage);
     }
-    return projects.filter(p => p.topics.includes(selectedTopic));
-  }, [projects, selectedTopic]);
+    if (activeFilter === 'topic' && selectedTopic) {
+      return projects.filter(p => p.topics.includes(selectedTopic));
+    }
+    return projects;
+  }, [projects, activeFilter, selectedTopic]);
+
+  const handleTopicClick = (topic: string) => {
+    setActiveFilter('topic');
+    setSelectedTopic(topic);
+  };
+
+  const handleFilterClick = (filter: FilterType) => {
+    setActiveFilter(filter);
+    setSelectedTopic(null);
+  }
 
   const fadeInAnimation = {
     initial: { opacity: 0, y: 20 },
@@ -86,21 +115,29 @@ export default function ProjectsPage() {
             <h2 className="font-headline text-2xl sm:text-3xl lg:text-4xl font-bold">{translations.projects.title}</h2>
         </div>
 
-        {!loading && !error && allTopics.length > 0 && (
+        {!loading && !error && (
           <div className="flex flex-wrap gap-2 mb-8 sm:mb-12">
             <Button
-              variant={selectedTopic === null ? 'default' : 'secondary'}
-              onClick={() => setSelectedTopic(null)}
+              variant={activeFilter === 'all' ? 'default' : 'secondary'}
+              onClick={() => handleFilterClick('all')}
               size="sm"
               className="text-xs sm:text-sm"
             >
               {translations.projects.all_projects}
             </Button>
+             <Button
+              variant={activeFilter === 'live' ? 'default' : 'secondary'}
+              onClick={() => handleFilterClick('live')}
+              size="sm"
+              className="text-xs sm:text-sm"
+            >
+              {translations.projects.live_demos}
+            </Button>
             {allTopics.map(topic => (
               <Button
                 key={topic}
-                variant={selectedTopic === topic ? 'default' : 'secondary'}
-                onClick={() => setSelectedTopic(topic)}
+                variant={activeFilter === 'topic' && selectedTopic === topic ? 'default' : 'secondary'}
+                onClick={() => handleTopicClick(topic)}
                 size="sm"
                 className="text-xs sm:text-sm"
               >
