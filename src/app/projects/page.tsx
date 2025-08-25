@@ -16,7 +16,7 @@ interface Project {
   name: string;
   description: string;
   html_url: string;
-  homepage: string;
+  homepage: string | null;
   topics: string[];
 }
 
@@ -43,18 +43,28 @@ export default function ProjectsPage() {
         }
         const data = await response.json();
         
-        const commitToLearnProject: Project = {
-          id: -1, // Using a unique ID
-          name: 'CommitToLearn Blog',
-          description: 'A personal blog to document studies and share knowledge about software development, technology, and career.',
-          html_url: 'https://github.com/committolearnn/CommitToLearn',
-          homepage: 'https://committolearnn.github.io/CommitToLearn/',
-          topics: ['Blog', 'GitHub Pages', 'Education']
-        };
+        const manualProjects: Project[] = [
+          {
+            id: -1, // Using a unique ID
+            name: 'CommitToLearn Blog',
+            description: 'A personal blog to document studies and share knowledge about software development, technology, and career.',
+            html_url: 'https://github.com/committolearnn/CommitToLearn',
+            homepage: 'https://committolearnn.github.io/CommitToLearn/',
+            topics: ['Blog', 'GitHub Pages', 'Education']
+          },
+          {
+            id: -2,
+            name: 'Think2Algo',
+            description: 'An interactive learning platform to master algorithms and data structures, featuring flashcard challenges, detailed explanations, and code templates. Built with Next.js, React, and TailwindCSS.',
+            html_url: '', // Private repo
+            homepage: 'https://think2algo.vercel.app/',
+            topics: ['Next.js', 'React', 'TypeScript', 'Education', 'Algorithms']
+          }
+        ];
 
         const sortedProjects = data.sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
         
-        setProjects([commitToLearnProject, ...sortedProjects]);
+        setProjects([...manualProjects, ...sortedProjects]);
 
       } catch (err) {
         if (err instanceof Error) {
@@ -197,12 +207,14 @@ export default function ProjectsPage() {
                                 </a>
                             </Button>
                         )}
-                        <Button asChild variant="secondary" size="sm" className="w-full sm:w-auto text-xs sm:text-sm">
-                            <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-                                <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
-                                {translations.projects.source}
-                            </a>
-                        </Button>
+                        {project.html_url && (
+                          <Button asChild variant="secondary" size="sm" className="w-full sm:w-auto text-xs sm:text-sm">
+                              <a href={project.html_url} target="_blank" rel="noopener noreferrer">
+                                  <Github className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                                  {translations.projects.source}
+                              </a>
+                          </Button>
+                        )}
                     </div>
                 </CardFooter>
                 </Card>
