@@ -56,7 +56,7 @@
         "categories": [
             {
                 "title": "Linguagens de Programação",
-                "skills": ["Swift", "Python", "Java", "JavaScript", "HTML/CSS", "SQL"]
+                "skills": ["Swift", "Python", "Java", "JavaScript", "HTML/CSS", "SQL", "Go"]
             },
             {
                 "title": "Frameworks e Bibliotecas",
@@ -76,7 +76,7 @@
             },
             {
                 "title": "Software",
-                "skills": ["Pacote Microsoft Office"]
+                "skills": ["Pacote Microsoft Office", "Power BI"]
             }
         ]
     }
