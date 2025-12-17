@@ -49,7 +49,7 @@ export default function ProjectsPage() {
             name: 'CommitToLearn Blog',
             description: 'A personal blog to document studies and share knowledge about software development, technology, and career.',
             html_url: 'https://github.com/committolearnn/CommitToLearn',
-            homepage: 'https://committolearnn.github.io/CommitToLearn/',
+            homepage: 'https://committolearn.vercel.app/',
             topics: ['Blog', 'GitHub Pages', 'Education']
           },
           {
