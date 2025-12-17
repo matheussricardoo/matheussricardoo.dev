@@ -39,7 +39,7 @@ export function Header() {
           <Link href="/work" className="font-medium text-sm text-muted-foreground hover:text-primary transition-colors">{translations.header.work}</Link>
           <Link href="/projects" className="font-medium text-sm text-muted-foreground hover:text-primary transition-colors">{translations.header.projects}</Link>
           <Link href="/skills" className="font-medium text-sm text-muted-foreground hover:text-primary transition-colors">{translations.header.skills}</Link>
-          <a href="https://committolearnn.github.io/CommitToLearn/" target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-muted-foreground hover:text-primary transition-colors">{translations.header.blog}</a>
+          <a href="https://committolearn.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-muted-foreground hover:text-primary transition-colors">{translations.header.blog}</a>
         </nav>
 
         {/* Desktop Social Icons */}
@@ -124,7 +124,7 @@ export function Header() {
                   {translations.header.skills}
                 </Link>
                 <a 
-                  href="https://committolearnn.github.io/CommitToLearn/" 
+                  href="https://committolearn.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="font-medium text-base text-muted-foreground hover:text-primary transition-colors py-2"
