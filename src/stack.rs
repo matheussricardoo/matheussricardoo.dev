@@ -14,7 +14,13 @@ pub fn Stack() -> impl IntoView {
 
             <div style="margin-bottom: 40px;">
                 <h3 style="color: #888; font-size: 14px; text-transform: uppercase; margin-bottom: 15px;">
-                    {move || if lang.get() == Language::En { "Core Languages" } else { "Linguagens Principais" }}
+                    {move || {
+                        if lang.get() == Language::En {
+                            "Core Languages"
+                        } else {
+                            "Linguagens Principais"
+                        }
+                    }}
                 </h3>
                 <div class="tech-grid">
                     <span class="tech-tag">"Swift"</span>
@@ -27,7 +33,13 @@ pub fn Stack() -> impl IntoView {
 
             <div style="margin-bottom: 40px;">
                 <h3 style="color: #888; font-size: 14px; text-transform: uppercase; margin-bottom: 15px;">
-                     {move || if lang.get() == Language::En { "Infrastructure & Tools" } else { "Infraestrutura e Ferramentas" }}
+                    {move || {
+                        if lang.get() == Language::En {
+                            "Infrastructure & Tools"
+                        } else {
+                            "Infraestrutura e Ferramentas"
+                        }
+                    }}
                 </h3>
                 <div class="tech-grid">
                     <span class="tech-tag">"Docker"</span>
@@ -40,7 +52,9 @@ pub fn Stack() -> impl IntoView {
             </div>
 
             <div>
-                <h3 style="color: #888; font-size: 14px; text-transform: uppercase; margin-bottom: 15px;">"Frameworks"</h3>
+                <h3 style="color: #888; font-size: 14px; text-transform: uppercase; margin-bottom: 15px;">
+                    "Frameworks"
+                </h3>
                 <div class="tech-grid">
                     <span class="tech-tag">"SwiftUI"</span>
                     <span class="tech-tag">"UIKit"</span>
