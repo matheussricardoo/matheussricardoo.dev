@@ -1,5 +1,9 @@
 use leptos::prelude::*;
 
+mod sidebar;
+
+use sidebar::Sidebar;
+
 fn main() {
     leptos::mount::mount_to_body(|| view! { <App/> })
 }
@@ -7,9 +11,14 @@ fn main() {
 #[component]
 fn App() -> impl IntoView {
     view! {
-        <div style="font-family: sans-serif; text-align: center; padding: 50px;">
+        <div class="app-shell">
+
+        <Sidebar/>
+
+        <main class="main-content">
             <h1>"Hello, Leptos Portfolio!"</h1>
             <p>"Built with Rust and WebAssembly."</p>
+        </main>
         </div>
     }
 }
