@@ -1,6 +1,6 @@
+use crate::Language;
 use leptos::IntoView;
 use leptos::prelude::*;
-use crate::Language;
 
 #[component]
 pub fn Stack() -> impl IntoView {
@@ -16,7 +16,7 @@ pub fn Stack() -> impl IntoView {
                 <h3 style="color: #888; font-size: 14px; text-transform: uppercase; margin-bottom: 15px;">
                     {move || if lang.get() == Language::En { "Core Languages" } else { "Linguagens Principais" }}
                 </h3>
-                <div class="tech-grid"> 
+                <div class="tech-grid">
                     <span class="tech-tag">"Swift"</span>
                     <span class="tech-tag">"Rust"</span>
                     <span class="tech-tag">"Go"</span>

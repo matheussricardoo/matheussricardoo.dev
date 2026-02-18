@@ -1,13 +1,12 @@
+use crate::{Language, Screen};
 use leptos::IntoView;
 use leptos::prelude::*;
-use crate::{Screen, Language}; 
 
 #[component]
 pub fn Sidebar(
     set_screen: WriteSignal<Screen>,
     current_screen: ReadSignal<Screen>,
 ) -> impl IntoView {
-    
     let active_class = "nav-link active";
     let inactive_class = "nav-link";
 
@@ -24,8 +23,8 @@ pub fn Sidebar(
             </div>
 
             <nav>
-                <a 
-                    href="#" 
+                <a
+                    href="#"
                     class=move || if current_screen.get() == Screen::Home { active_class } else { inactive_class }
                     on:click=move |_| set_screen.set(Screen::Home)
                 >
@@ -36,8 +35,8 @@ pub fn Sidebar(
                     {move || if lang.get() == Language::En { "Home" } else { "Início" }}
                 </a>
 
-                <a 
-                    href="#" 
+                <a
+                    href="#"
                     class=move || if current_screen.get() == Screen::Projects { active_class } else { inactive_class }
                     on:click=move |_| set_screen.set(Screen::Projects)
                 >
@@ -47,8 +46,8 @@ pub fn Sidebar(
                     {move || if lang.get() == Language::En { "Projects" } else { "Projetos" }}
                 </a>
 
-                <a 
-                    href="#" 
+                <a
+                    href="#"
                     class=move || if current_screen.get() == Screen::Work { active_class } else { inactive_class }
                     on:click=move |_| set_screen.set(Screen::Work)
                 >
@@ -59,8 +58,8 @@ pub fn Sidebar(
                     {move || if lang.get() == Language::En { "Experience" } else { "Experiência" }}
                 </a>
 
-                <a 
-                    href="#" 
+                <a
+                    href="#"
                     class=move || if current_screen.get() == Screen::Stack { active_class } else { inactive_class }
                     on:click=move |_| set_screen.set(Screen::Stack)
                 >
@@ -78,14 +77,14 @@ pub fn Sidebar(
 
             <div style="border-top: 1px solid #222; padding-top: 20px;">
                 <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button 
+                    <button
                         on:click=move |_| set_lang.set(Language::En)
                         style=move || if lang.get() == Language::En { "color: #fff; font-weight: bold; background: none; border: none; cursor: pointer;" } else { "color: #444; background: none; border: none; cursor: pointer;" }
                     >
                         "EN"
                     </button>
                     <span style="color: #444;">"|"</span>
-                    <button 
+                    <button
                         on:click=move |_| set_lang.set(Language::Pt)
                         style=move || if lang.get() == Language::Pt { "color: #fff; font-weight: bold; background: none; border: none; cursor: pointer;" } else { "color: #444; background: none; border: none; cursor: pointer;" }
                     >
@@ -96,7 +95,7 @@ pub fn Sidebar(
                 <p style="font-size: 11px; color: #444; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
                     {move || if lang.get() == Language::En { "Connect" } else { "Contato" }}
                 </p>
-                
+
                 <a href="https://github.com/matheussricardoo" target="_blank" class="nav-link">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
