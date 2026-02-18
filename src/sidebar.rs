@@ -33,7 +33,7 @@ pub fn Sidebar(
                         <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
-                    "Home"
+                    {move || if lang.get() == Language::En { "Home" } else { "Início" }}
                 </a>
 
                 <a 
@@ -44,7 +44,7 @@ pub fn Sidebar(
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                     </svg>
-                    "Projects"
+                    {move || if lang.get() == Language::En { "Projects" } else { "Projetos" }}
                 </a>
 
                 <a 
@@ -56,7 +56,7 @@ pub fn Sidebar(
                         <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
                         <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                     </svg>
-                    "Experience"
+                    {move || if lang.get() == Language::En { "Experience" } else { "Experiência" }}
                 </a>
 
                 <a 
@@ -93,7 +93,9 @@ pub fn Sidebar(
                     </button>
                 </div>
 
-                <p style="font-size: 11px; color: #444; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">"Connect"</p>
+                <p style="font-size: 11px; color: #444; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
+                    {move || if lang.get() == Language::En { "Connect" } else { "Contato" }}
+                </p>
                 
                 <a href="https://github.com/matheussricardoo" target="_blank" class="nav-link">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
