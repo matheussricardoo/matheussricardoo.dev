@@ -1,17 +1,17 @@
-use leptos::prelude::*;
 use leptos::IntoView;
+use leptos::prelude::*;
 
 mod overview;
-mod sidebar;
-mod work;
-mod stack;
 mod projects;
+mod sidebar;
+mod stack;
+mod work;
 
-use overview::Home as HomeView; 
-use sidebar::Sidebar;
-use work::Work;
-use stack::Stack;
+use overview::Home as HomeView;
 use projects::Projects;
+use sidebar::Sidebar;
+use stack::Stack;
+use work::Work;
 
 #[derive(Clone, PartialEq)]
 pub enum Screen {
@@ -45,12 +45,13 @@ fn App() -> impl IntoView {
 
             <main class="main-content">
                 {move || match screen.get() {
-                    Screen::Home => view! { <HomeView/> }.into_any(), 
+                    Screen::Home => view! { <HomeView/> }.into_any(),
                     Screen::Projects => view! { <Projects/> }.into_any(),
                     Screen::Work => view! { <Work/> }.into_any(),
-                    Screen::Stack => view! { <Stack/> }.into_any(), 
+                    Screen::Stack => view! { <Stack/> }.into_any(),
                 }}
             </main>
         </div>
     }
 }
+
