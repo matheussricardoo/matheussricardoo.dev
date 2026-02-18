@@ -9,7 +9,13 @@ pub fn Projects() -> impl IntoView {
     view! {
         <div style="max-width: 900px; padding-top: 20px;">
             <h1 style="font-size: 24px; margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px;">
-                {move || if lang.get() == Language::En { "Selected Projects" } else { "Projetos Selecionados" }}
+                {move || {
+                    if lang.get() == Language::En {
+                        "Selected Projects"
+                    } else {
+                        "Projetos Selecionados"
+                    }
+                }}
             </h1>
 
             <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
@@ -18,18 +24,33 @@ pub fn Projects() -> impl IntoView {
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
                         <div>
                             <h2 style="margin: 0; color: #fff; font-size: 20px;">"Claritas"</h2>
-                            <p style="color: #666; font-size: 14px; margin-top: 5px;">"Desktop Epub Reader"</p>
+                            <p style="color: #666; font-size: 14px; margin-top: 5px;">
+                                "Desktop Epub Reader"
+                            </p>
                         </div>
-                        <a href="https://github.com/matheussricardoo/Claritas" target="_blank" class="btn-secondary" style="font-size: 12px; padding: 8px 16px;">
-                            {move || if lang.get() == Language::En { "View Code ↗" } else { "Ver Código ↗" }}
+                        <a
+                            href="https://github.com/matheussricardoo/Claritas"
+                            target="_blank"
+                            class="btn-secondary"
+                            style="font-size: 12px; padding: 8px 16px;"
+                        >
+                            {move || {
+                                if lang.get() == Language::En {
+                                    "View Code ↗"
+                                } else {
+                                    "Ver Código ↗"
+                                }
+                            }}
                         </a>
                     </div>
 
                     <p style="color: #ccc; line-height: 1.7; font-size: 15px; margin-bottom: 25px;">
-                        {move || if lang.get() == Language::En {
-                            "I wasn't happy with the Thorium experience, so I decided to build my own to learn more about Rust and how epub readers work."
-                        } else {
-                            "Não estava feliz com a experiência do Thorium e decidi criar o meu próprio para aprender mais de Rust e como funcionam os leitores de epub."
+                        {move || {
+                            if lang.get() == Language::En {
+                                "I wasn't happy with the Thorium experience, so I decided to build my own to learn more about Rust and how epub readers work."
+                            } else {
+                                "Não estava feliz com a experiência do Thorium e decidi criar o meu próprio para aprender mais de Rust e como funcionam os leitores de epub."
+                            }
                         }}
                     </p>
 
@@ -44,18 +65,33 @@ pub fn Projects() -> impl IntoView {
                     <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
                         <div>
                             <h2 style="margin: 0; color: #fff; font-size: 20px;">"DBoard"</h2>
-                            <p style="color: #666; font-size: 14px; margin-top: 5px;">"iOS Productivity App"</p>
+                            <p style="color: #666; font-size: 14px; margin-top: 5px;">
+                                "iOS Productivity App"
+                            </p>
                         </div>
-                        <a href="https://apps.apple.com/br/app/dboard/id6747050797" target="_blank" class="btn-secondary" style="font-size: 12px; padding: 8px 16px;">
-                            {move || if lang.get() == Language::En { "App Store ↗" } else { "App Store ↗" }}
+                        <a
+                            href="https://apps.apple.com/br/app/dboard/id6747050797"
+                            target="_blank"
+                            class="btn-secondary"
+                            style="font-size: 12px; padding: 8px 16px;"
+                        >
+                            {move || {
+                                if lang.get() == Language::En {
+                                    "App Store ↗"
+                                } else {
+                                    "App Store ↗"
+                                }
+                            }}
                         </a>
                     </div>
 
                     <p style="color: #ccc; line-height: 1.7; font-size: 15px; margin-bottom: 25px;">
-                         {move || if lang.get() == Language::En {
-                            "Created to reduce the amount of apps used by designers. Centralizes everything a designer needs like drawings and pilot projects without getting lost in organization. Currently an MVP."
-                        } else {
-                            "Criado para secar a quantidade de apps utilizados pelos designers, centralizar tudo que um designer precisa como desenhos e projetos pilotos sem sair para outros apps. Atualmente está como um MVP."
+                        {move || {
+                            if lang.get() == Language::En {
+                                "Created to reduce the amount of apps used by designers. Centralizes everything a designer needs like drawings and pilot projects without getting lost in organization. Currently an MVP."
+                            } else {
+                                "Criado para secar a quantidade de apps utilizados pelos designers, centralizar tudo que um designer precisa como desenhos e projetos pilotos sem sair para outros apps. Atualmente está como um MVP."
+                            }
                         }}
                     </p>
 
