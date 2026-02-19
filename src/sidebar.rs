@@ -135,35 +135,35 @@ pub fn Sidebar(
                 </a>
             </nav>
 
-            <div style="border-top: 1px solid #222; padding-top: 20px;">
-                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                    <button
-                        on:click=move |_| set_lang.set(Language::En)
-                        style=move || {
-                            if lang.get() == Language::En {
-                                "color: #fff; font-weight: bold; background: none; border: none; cursor: pointer;"
-                            } else {
-                                "color: #444; background: none; border: none; cursor: pointer;"
-                            }
+            <div class="lang-toggle" style="display: flex; gap: 10px;">
+                <button
+                    on:click=move |_| set_lang.set(Language::En)
+                    style=move || {
+                        if lang.get() == Language::En {
+                            "color: #fff; font-weight: bold; background: none; border: none; cursor: pointer;"
+                        } else {
+                            "color: #444; background: none; border: none; cursor: pointer;"
                         }
-                    >
-                        "EN"
-                    </button>
-                    <span style="color: #444;">"|"</span>
-                    <button
-                        on:click=move |_| set_lang.set(Language::Pt)
-                        style=move || {
-                            if lang.get() == Language::Pt {
-                                "color: #fff; font-weight: bold; background: none; border: none; cursor: pointer;"
-                            } else {
-                                "color: #444; background: none; border: none; cursor: pointer;"
-                            }
+                    }
+                >
+                    "EN"
+                </button>
+                <span style="color: #444;">"|"</span>
+                <button
+                    on:click=move |_| set_lang.set(Language::Pt)
+                    style=move || {
+                        if lang.get() == Language::Pt {
+                            "color: #fff; font-weight: bold; background: none; border: none; cursor: pointer;"
+                        } else {
+                            "color: #444; background: none; border: none; cursor: pointer;"
                         }
-                    >
-                        "PT-BR"
-                    </button>
-                </div>
+                    }
+                >
+                    "PT-BR"
+                </button>
+            </div>
 
+            <div class="sidebar-footer" style="border-top: 1px solid #222; padding-top: 20px;">
                 <p style="font-size: 11px; color: #444; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
                     {move || if lang.get() == Language::En { "Connect" } else { "Contato" }}
                 </p>

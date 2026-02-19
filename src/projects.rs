@@ -7,8 +7,8 @@ pub fn Projects() -> impl IntoView {
     let lang = use_context::<ReadSignal<Language>>().expect("Lang context missing");
 
     view! {
-        <div style="max-width: 900px; padding-top: 20px;">
-            <h1 style="font-size: 24px; margin-bottom: 40px; border-bottom: 1px solid #222; padding-bottom: 20px;">
+        <div class="max-w-3xl pt-5">
+            <h1 class="text-2xl font-semibold text-white mb-10 pb-5 border-b border-[#222]">
                 {move || {
                     if lang.get() == Language::En {
                         "Selected Projects"
@@ -18,20 +18,31 @@ pub fn Projects() -> impl IntoView {
                 }}
             </h1>
 
-            <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+            <div class="flex flex-col gap-6">
 
-                <div style="background: #111; border: 1px solid #222; border-radius: 16px; padding: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                // ── Claritas ──────────────────────────────────────────────────
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                    <div class="flex justify-between items-start mb-5">
                         <div>
-                            <h2 style="margin: 0; color: #fff; font-size: 20px;">"Claritas"</h2>
-                            <p style="color: #666; font-size: 14px; margin-top: 5px;">
-                                "Desktop Epub Reader"
-                            </p>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h2 class="text-white text-xl font-semibold m-0">"Claritas"</h2>
+                                <span class="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-400 border border-amber-500/25 text-xs font-medium px-2.5 py-1 rounded-full">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                                    {move || {
+                                        if lang.get() == Language::En {
+                                            "Working"
+                                        } else {
+                                            "Em andamento"
+                                        }
+                                    }}
+                                </span>
+                            </div>
+                            <p class="text-[#666] text-sm mt-1">"Desktop Epub Reader"</p>
                         </div>
                         <a
                             href="https://github.com/matheussricardoo/Claritas"
                             target="_blank"
-                            class="btn-secondary"
+                            class="btn-secondary group-hover:border-[#555] transition-colors"
                             style="font-size: 12px; padding: 8px 16px;"
                         >
                             {move || {
@@ -44,7 +55,7 @@ pub fn Projects() -> impl IntoView {
                         </a>
                     </div>
 
-                    <p style="color: #ccc; line-height: 1.7; font-size: 15px; margin-bottom: 25px;">
+                    <p class="text-[#ccc] leading-relaxed text-sm mb-6">
                         {move || {
                             if lang.get() == Language::En {
                                 "I wasn't happy with the Thorium experience, so I decided to build my own to learn more about Rust and how epub readers work."
@@ -61,18 +72,22 @@ pub fn Projects() -> impl IntoView {
                     </div>
                 </div>
 
-                <div style="background: #111; border: 1px solid #222; border-radius: 16px; padding: 30px;">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                // ── DBoard ────────────────────────────────────────────────────
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                    <div class="flex justify-between items-start mb-5">
                         <div>
-                            <h2 style="margin: 0; color: #fff; font-size: 20px;">"DBoard"</h2>
-                            <p style="color: #666; font-size: 14px; margin-top: 5px;">
-                                "iOS Productivity App"
-                            </p>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h2 class="text-white text-xl font-semibold m-0">"DBoard"</h2>
+                                <span class="inline-flex items-center gap-1.5 bg-violet-500/10 text-violet-400 border border-violet-500/25 text-xs font-medium px-2.5 py-1 rounded-full">
+                                    "MVP"
+                                </span>
+                            </div>
+                            <p class="text-[#666] text-sm mt-1">"iOS Productivity App"</p>
                         </div>
                         <a
                             href="https://apps.apple.com/br/app/dboard/id6747050797"
                             target="_blank"
-                            class="btn-secondary"
+                            class="btn-secondary group-hover:border-[#555] transition-colors"
                             style="font-size: 12px; padding: 8px 16px;"
                         >
                             {move || {
@@ -85,7 +100,7 @@ pub fn Projects() -> impl IntoView {
                         </a>
                     </div>
 
-                    <p style="color: #ccc; line-height: 1.7; font-size: 15px; margin-bottom: 25px;">
+                    <p class="text-[#ccc] leading-relaxed text-sm mb-6">
                         {move || {
                             if lang.get() == Language::En {
                                 "Created to reduce the amount of apps used by designers. Centralizes everything a designer needs like drawings and pilot projects without getting lost in organization. Currently an MVP."
@@ -99,6 +114,60 @@ pub fn Projects() -> impl IntoView {
                         <span class="tech-tag">"Swift"</span>
                         <span class="tech-tag">"SwiftUI"</span>
                         <span class="tech-tag">"CoreData"</span>
+                    </div>
+                </div>
+
+                // ── FluentQuest ───────────────────────────────────────────────
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                    <div class="flex justify-between items-start mb-5">
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h2 class="text-white text-xl font-semibold m-0">"FluentQuest"</h2>
+                                <span class="inline-flex items-center gap-1.5 bg-violet-500/10 text-violet-400 border border-violet-500/25 text-xs font-medium px-2.5 py-1 rounded-full">
+                                    "MVP"
+                                </span>
+                            </div>
+                            <p class="text-[#666] text-sm mt-1">
+                                {move || {
+                                    if lang.get() == Language::En {
+                                        "Terminal Language Learning Game"
+                                    } else {
+                                        "Jogo de Aprendizado de Idiomas no Terminal"
+                                    }
+                                }}
+                            </p>
+                        </div>
+                        <a
+                            href="https://github.com/matheussricardoo/FluentQuest"
+                            target="_blank"
+                            class="btn-secondary group-hover:border-[#555] transition-colors"
+                            style="font-size: 12px; padding: 8px 16px;"
+                        >
+                            {move || {
+                                if lang.get() == Language::En {
+                                    "View Code ↗"
+                                } else {
+                                    "Ver Código ↗"
+                                }
+                            }}
+                        </a>
+                    </div>
+
+                    <p class="text-[#ccc] leading-relaxed text-sm mb-6">
+                        {move || {
+                            if lang.get() == Language::En {
+                                "An interactive terminal-based game that turns language learning into a dynamic and engaging experience. With challenging mini-games and a reward system, it encourages consistent vocabulary and comprehension practice."
+                            } else {
+                                "Um jogo interativo baseado em terminal que transforma o aprendizado de idiomas em uma experiência dinâmica e envolvente. Com mini-games desafiadores e um sistema de recompensas, incentiva a prática consistente de vocabulário e compreensão."
+                            }
+                        }}
+                    </p>
+
+                    <div class="tech-grid">
+                        <span class="tech-tag">"Swift"</span>
+                        <span class="tech-tag">"Terminal"</span>
+                        <span class="tech-tag">"CLI"</span>
+                        <span class="tech-tag">"Language Learning"</span>
                     </div>
                 </div>
 
