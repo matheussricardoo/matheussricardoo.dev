@@ -30,6 +30,15 @@ html {
     justify-content: space-between;
 }
 
+/* Desktop: lang-toggle aparece após o footer (GitHub/LinkedIn) */
+.sidebar-footer {
+    order: 2;
+}
+
+.lang-toggle {
+    order: 3;
+}
+
 .profile {
     display: flex;
     align-items: center;
@@ -112,9 +121,11 @@ html {
     .col-span-2 {
         grid-column: span 2;
     }
+
     .col-span-4 {
         grid-column: span 4;
     }
+
     .row-span-2 {
         grid-row: span 2;
     }
@@ -139,6 +150,7 @@ html {
             grid-template-columns: 1fr;
             grid-auto-rows: auto;
         }
+
         .col-span-2,
         .col-span-4,
         .row-span-2 {
@@ -293,7 +305,7 @@ html {
 .text-gradient {
     background: linear-gradient(to right, #fff, #888);
     -webkit-background-clip: text;
-    background-clip: text; 
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -355,4 +367,88 @@ html {
 .btn-secondary:hover {
     background-color: #222;
     border-color: #666;
+}
+
+/* ── Mobile ───────────────────────── */
+@media (max-width: 640px) {
+
+    body,
+    html {
+        height: 100%;
+    }
+
+    .app-shell {
+        flex-direction: column;
+        height: 100svh;
+    }
+
+    .main-content {
+        padding: 24px 16px 88px;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-top: 1px solid #222;
+        padding: 0 8px env(safe-area-inset-bottom);
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: #0a0a0a;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .lang-toggle {
+        gap: 4px;
+        align-items: center;
+        padding: 4px 6px;
+    }
+
+    .lang-toggle button {
+        font-size: 11px;
+        padding: 4px 4px;
+    }
+
+    .lang-toggle span {
+        font-size: 11px;
+    }
+
+    .sidebar nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .nav-link {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        font-size: 10px;
+        padding: 10px 8px;
+        margin-bottom: 0;
+        flex: 1;
+        justify-content: center;
+        border-radius: 8px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
 }
