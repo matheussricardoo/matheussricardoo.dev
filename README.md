@@ -1,13 +1,13 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=003366&height=200&section=header&text=Portfólio&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=40&desc=Next.js%20|%20React%20|%20TypeScript%20|%20TailwindCSS&descAlignY=60&descSize=18">
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=222222&height=200&section=header&text=matheussricardoo.me&fontSize=45&fontColor=fff&animation=twinkling&fontAlignY=40&desc=Rust%20|%20Leptos%20|%20WebAssembly%20|%20TailwindCSS&descAlignY=60&descSize=18">
 
 <p align="center">
-  <i>🚀 A minimalist and modern portfolio to showcase my projects, built with Next.js and featuring a clean user experience.</i>
+  <i>⚡ A minimalist and fast portfolio built entirely in Rust, compiled to WebAssembly and running in the browser via Leptos.</i>
 </p>
 
 <p align="center">
-  <i>🚀 Um portfólio minimalista e moderno para exibir meus projetos, construído com Next.js e focado em uma experiência de usuário limpa.</i>
+  <i>⚡ Um portfólio minimalista e rápido construído inteiramente em Rust, compilado para WebAssembly e executado no browser via Leptos.</i>
 </p>
 
 ---
@@ -19,10 +19,11 @@
 | Feature | Description | Descrição |
 |:---:|:---|:---|
 | 🌐 | Bilingual (PT-BR/EN) | Suporte Bilíngue (PT-BR/EN) |
-| 🗂️ | GitHub API Integration | Integração com a API do GitHub |
-| 🔎 | Project Filtering | Filtragem de Projetos |
-| 📱 | Fully Responsive Design | Design Totalmente Responsivo |
-| ✨ | Modern UI with Animations | UI Moderna com Animações |
+| ⚡ | WebAssembly (WASM) | Executado como binário no browser |
+| 📱 | Mobile Responsive | Sidebar vira bottom nav no celular |
+| 🦀 | 100% Rust | Frontend escrito inteiramente em Rust |
+| 🎨 | Tailwind CSS | Estilização utilitária com Tailwind |
+| 🔒 | Zero JS runtime | Sem frameworks JavaScript |
 
 </div>
 
@@ -30,10 +31,15 @@
 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind&theme=dark" />
+    <img src="https://skillicons.dev/icons?i=rust,wasm,tailwind,linux&theme=dark" />
   </a>
 </div>
 
+<div align="center">
+  <sub>Leptos • Trunk • leptosfmt • wasm-bindgen</sub>
+</div>
+
+---
 
 ### 🚀 Getting Started | Começando
 
@@ -44,11 +50,29 @@ git clone https://github.com/matheussricardoo/matheussricardoo.dev.git
 # Navigate to project directory | Navegue até o diretório do projeto
 cd matheussricardoo.dev
 
-# Install dependencies | Instale as dependências
-npm install
+# Install Rust target for WASM (if needed) | Instale o target WASM
+rustup target add wasm32-unknown-unknown
+
+# Install Trunk (WASM bundler) | Instale o Trunk
+cargo install trunk
 
 # Run the development server | Execute o servidor de desenvolvimento
-npm run dev
+trunk serve
+
+# Build for production | Build para produção
+trunk build --release
+```
+
+### 📁 Structure | Estrutura
+
+```
+src/
+├── main.rs        # App root & routing
+├── overview.rs    # Home page
+├── projects.rs    # Projects page
+├── sidebar.rs     # Navigation sidebar
+├── stack.rs       # Tech stack page
+└── work.rs        # Work experience page
 ```
 
 ### 👤 Author | Autor
@@ -62,6 +86,6 @@ npm run dev
   </a>
 </div>
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=003366&height=120&section=footer"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=222222&height=120&section=footer"/>
 
 </div>
