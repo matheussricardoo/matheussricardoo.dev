@@ -21,7 +21,7 @@ pub fn Projects() -> impl IntoView {
             <div class="flex flex-col gap-6">
 
                 // ── Claritas ──────────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -73,7 +73,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── DBoard ────────────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -118,7 +118,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── Think2Algo ───────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -178,7 +178,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── FluentQuest ───────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -232,7 +232,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── FocusFlow ─────────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -290,7 +290,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── Pokédex ───────────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -341,7 +341,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── LocalLLMSecurityAuditor ───────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -395,7 +395,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── iot-risk-prevention ───────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -457,7 +457,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── TasksCrudAWS ──────────────────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -517,7 +517,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── CollegeProjectAWSBirthdayReminder ─────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
@@ -578,7 +578,7 @@ pub fn Projects() -> impl IntoView {
                 </div>
 
                 // ── CollegeProjectAWSCandyShop ────────────────────────────────
-                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-all duration-200 group">
+                <div class="bg-[#111] border border-[#222] rounded-2xl p-7 hover:border-[#333] transition-colors duration-200 group">
                     <div class="flex justify-between items-start mb-5">
                         <div>
                             <div class="flex items-center gap-3 mb-1">
