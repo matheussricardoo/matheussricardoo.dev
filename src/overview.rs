@@ -40,34 +40,65 @@ pub fn Home() -> impl IntoView {
                 </p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-                <div style="background: #111; padding: 24px; border-radius: 12px; border: 1px solid #222;">
-                    <h3 style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
-                        {move || {
-                            if lang.get() == Language::En { "Current Focus" } else { "Foco Atual" }
-                        }}
-                    </h3>
-                    <div style="font-size: 16px; color: #fff; font-weight: 500;">
+                <div class="bg-[#111] border border-[#222] rounded-xl p-6 hover:border-[#333] transition-colors">
+                    <p class="text-[#555] text-[11px] uppercase tracking-widest mb-3 font-medium">
                         {move || {
                             if lang.get() == Language::En {
-                                "Mastering Rust & System Architecture"
+                                "Currently Reading"
                             } else {
-                                "Dominando Rust e Arquitetura de Sistemas"
+                                "Lendo Agora"
                             }
                         }}
-                    </div>
+                    </p>
+                    <p class="text-white font-medium text-[15px] leading-snug">
+                        "Leptos & Dioxus docs"
+                    </p>
+                    <p class="text-[#555] text-xs mt-1">"Rust web frameworks"</p>
                 </div>
 
-                <div style="background: #111; padding: 24px; border-radius: 12px; border: 1px solid #222;">
-                    <h3 style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                <div class="bg-[#111] border border-[#222] rounded-xl p-6 hover:border-[#333] transition-colors">
+                    <p class="text-[#555] text-[11px] uppercase tracking-widest mb-3 font-medium">
                         {move || {
-                            if lang.get() == Language::En { "Based In" } else { "Localização" }
+                            if lang.get() == Language::En {
+                                "Active Projects"
+                            } else {
+                                "Projetos Ativos"
+                            }
                         }}
-                    </h3>
-                    <div style="font-size: 16px; color: #fff; font-weight: 500;">
-                        "São Paulo, Brazil 🇧🇷"
-                    </div>
+                    </p>
+                    <p class="text-white font-medium text-[28px] leading-none">"11"</p>
+                    <p class="text-[#555] text-xs mt-1">
+                        {move || {
+                            if lang.get() == Language::En {
+                                "publicly on GitHub"
+                            } else {
+                                "públicos no GitHub"
+                            }
+                        }}
+                    </p>
+                </div>
+
+                <div class="bg-[#111] border border-[#222] rounded-xl p-6 hover:border-[#333] transition-colors">
+                    <p class="text-[#555] text-[11px] uppercase tracking-widest mb-3 font-medium">
+                        {move || {
+                            if lang.get() == Language::En {
+                                "Next Goal"
+                            } else {
+                                "Próximo Objetivo"
+                            }
+                        }}
+                    </p>
+                    <p class="text-white font-medium text-[15px] leading-snug">
+                        {move || {
+                            if lang.get() == Language::En {
+                                "Ship Claritas & open-source it"
+                            } else {
+                                "Finalizar Claritas e torná-lo open-source"
+                            }
+                        }}
+                    </p>
                 </div>
 
             </div>

@@ -204,6 +204,56 @@ pub fn Sidebar(
                     </svg>
                     "LinkedIn"
                 </a>
+
+                <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid #1a1a1a;">
+                    <p style="font-size: 11px; color: #444; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">
+                        {move || if lang.get() == Language::En { "Resume" } else { "Currículo" }}
+                    </p>
+                    <div style="display: flex; gap: 8px;">
+                        <a
+                            href="/cv-en.pdf"
+                            target="_blank"
+                            class="btn-secondary"
+                            style="font-size: 12px; padding: 7px 12px; flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;"
+                        >
+                            <svg
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            "EN"
+                        </a>
+                        <a
+                            href="/cv-pt.pdf"
+                            target="_blank"
+                            class="btn-secondary"
+                            style="font-size: 12px; padding: 7px 12px; flex: 1; text-align: center; display: flex; align-items: center; justify-content: center; gap: 5px;"
+                        >
+                            <svg
+                                width="13"
+                                height="13"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            "PT"
+                        </a>
+                    </div>
+                </div>
             </div>
         </aside>
     }

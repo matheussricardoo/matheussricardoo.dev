@@ -47,7 +47,7 @@ pub fn Stack() -> impl IntoView {
                     <span class="tech-tag">"Google Cloud"</span>
                     <span class="tech-tag">"Linux (Mint/Ubuntu)"</span>
                     <span class="tech-tag">"Git"</span>
-                    <span class="tech-tag">"PostgreSQL"</span>
+                    <span class="tech-tag">"SQL"</span>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ pub fn Stack() -> impl IntoView {
                 </h3>
                 <div class="tech-grid">
                     <span class="tech-tag">"SwiftUI"</span>
-                    <span class="tech-tag">"UIKit"</span>
+                    <span class="tech-tag">"FastAPI"</span>
                     <span class="tech-tag">"Leptos"</span>
                     <span class="tech-tag">"Dioxus"</span>
                     <span class="tech-tag">"Spring Boot"</span>
