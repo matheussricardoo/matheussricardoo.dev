@@ -16,6 +16,7 @@ pub fn Sidebar(
     view! {
         <aside class="sidebar">
             <div class="profile">
+                <img src="/assets/Profile.jpeg" alt="Matheus Ricardo" class="profile-avatar" />
                 <div class="profile-info">
                     <h2 style="font-size: 18px;">"Matheus Ricardo"</h2>
                     <p>"Software Engineer"</p>
