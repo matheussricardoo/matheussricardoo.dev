@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0d0d0d"/>
+
+  <!-- Subtle border frame -->
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="none" stroke="#222" stroke-width="1"/>
+
+  <!-- Accent line left -->
+  <rect x="80" y="220" width="3" height="120" rx="2" fill="#333"/>
+
+  <!-- Name -->
+  <text
+    x="116"
+    y="290"
+    font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif"
+    font-size="72"
+    font-weight="700"
+    fill="#ffffff"
+    letter-spacing="-2"
+  >Matheus Ricardo</text>
+
+  <!-- Role -->
+  <text
+    x="118"
+    y="352"
+    font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif"
+    font-size="32"
+    font-weight="400"
+    fill="#666666"
+    letter-spacing="0"
+  >Software Engineer &amp; Apple Developer Academy Alumni</text>
+
+  <!-- URL -->
+  <text
+    x="118"
+    y="530"
+    font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif"
+    font-size="22"
+    font-weight="400"
+    fill="#444444"
+    letter-spacing="0"
+  >matheussricardoo.me</text>
+
+  <!-- Dots decoration -->
+  <circle cx="1080" cy="120" r="3" fill="#222"/>
+  <circle cx="1100" cy="120" r="3" fill="#222"/>
+  <circle cx="1120" cy="120" r="3" fill="#222"/>
+  <circle cx="1080" cy="140" r="3" fill="#222"/>
+  <circle cx="1100" cy="140" r="3" fill="#222"/>
+  <circle cx="1120" cy="140" r="3" fill="#222"/>
+  <circle cx="1080" cy="160" r="3" fill="#222"/>
+  <circle cx="1100" cy="160" r="3" fill="#222"/>
+  <circle cx="1120" cy="160" r="3" fill="#222"/>
+
+  <!-- Stack tags -->
+  <!-- Rust tag -->
+  <rect x="118" y="410" width="78" height="34" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <text x="157" y="432" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="500" fill="#aaaaaa" text-anchor="middle">Rust</text>
+
+  <!-- Swift tag -->
+  <rect x="208" y="410" width="78" height="34" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <text x="247" y="432" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="500" fill="#aaaaaa" text-anchor="middle">Swift</text>
+
+  <!-- Go tag -->
+  <rect x="298" y="410" width="60" height="34" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <text x="328" y="432" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="500" fill="#aaaaaa" text-anchor="middle">Go</text>
+
+  <!-- Python tag -->
+  <rect x="370" y="410" width="90" height="34" rx="6" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <text x="415" y="432" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="500" fill="#aaaaaa" text-anchor="middle">Python</text>
+
+</svg>
