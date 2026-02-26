@@ -2,7 +2,7 @@ use leptos::IntoView;
 use leptos::prelude::*;
 
 mod overview;
-mod projects;
+pub mod projects;
 mod sidebar;
 mod stack;
 mod work;
@@ -54,4 +54,3 @@ fn App() -> impl IntoView {
         </div>
     }
 }
-
