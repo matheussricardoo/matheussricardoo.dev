@@ -40,70 +40,7 @@ pub fn Home() -> impl IntoView {
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-
-                <div class="bg-[#111] border border-[#222] rounded-xl p-6 hover:border-[#333] transition-colors">
-                    <p class="text-[#555] text-[11px] uppercase tracking-widest mb-3 font-medium">
-                        {move || {
-                            if lang.get() == Language::En {
-                                "Currently Reading"
-                            } else {
-                                "Lendo Agora"
-                            }
-                        }}
-                    </p>
-                    <p class="text-white font-medium text-[15px] leading-snug">
-                        "Leptos & Dioxus docs"
-                    </p>
-                    <p class="text-[#555] text-xs mt-1">"Rust web frameworks"</p>
-                </div>
-
-                <div class="bg-[#111] border border-[#222] rounded-xl p-6 hover:border-[#333] transition-colors">
-                    <p class="text-[#555] text-[11px] uppercase tracking-widest mb-3 font-medium">
-                        {move || {
-                            if lang.get() == Language::En {
-                                "Active Projects"
-                            } else {
-                                "Projetos Ativos"
-                            }
-                        }}
-                    </p>
-                    <p class="text-white font-medium text-[28px] leading-none">"11"</p>
-                    <p class="text-[#555] text-xs mt-1">
-                        {move || {
-                            if lang.get() == Language::En {
-                                "publicly on GitHub"
-                            } else {
-                                "públicos no GitHub"
-                            }
-                        }}
-                    </p>
-                </div>
-
-                <div class="bg-[#111] border border-[#222] rounded-xl p-6 hover:border-[#333] transition-colors">
-                    <p class="text-[#555] text-[11px] uppercase tracking-widest mb-3 font-medium">
-                        {move || {
-                            if lang.get() == Language::En {
-                                "Next Goal"
-                            } else {
-                                "Próximo Objetivo"
-                            }
-                        }}
-                    </p>
-                    <p class="text-white font-medium text-[15px] leading-snug">
-                        {move || {
-                            if lang.get() == Language::En {
-                                "Ship Claritas & open-source it"
-                            } else {
-                                "Finalizar Claritas e torná-lo open-source"
-                            }
-                        }}
-                    </p>
-                </div>
-
-            </div>
-
-            <div style="margin-top: 40px; border-top: 1px solid #222; padding-top: 40px;">
+            <div style="border-top: 1px solid #222; padding-top: 40px;">
                 <h3 style="color: #fff; font-size: 18px; margin-bottom: 16px;">
                     {move || if lang.get() == Language::En { "Background" } else { "Sobre Mim" }}
                 </h3>
