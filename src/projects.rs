@@ -22,21 +22,6 @@ struct Project {
 fn projects() -> Vec<Project> {
     vec![
         Project {
-            name: "git-sage",
-            subtitle_en: "AI Conventional Commit Generator",
-            subtitle_pt: "Gerador de Commits Convencionais com IA",
-            description_en: "I was always wondering what the best way to write a commit message was so people would follow the Conventional Commits convention. For this repetitive task I built a CLI that uses a local open-source model via Ollama to read the staged diff and craft the commit message for you.",
-            description_pt: "Sempre pensei na melhor maneira de escrever mensagens de commit para que as pessoas seguissem a convenção do Conventional Commits. Para essa tarefa repetitiva, criei uma CLI que usa um modelo open source rodando localmente via Ollama, que lê o diff do projeto e constrói a mensagem do commit automaticamente.",
-            url: "https://github.com/matheussricardoo/git-sage",
-            link_label_en: "View Code ↗",
-            link_label_pt: "Ver Código ↗",
-            tags: &["Rust", "Ollama", "LLM", "CLI", "Git"],
-            badge_en: "CLI",
-            badge_pt: "CLI",
-            badge_color: "green",
-            pulse: false,
-        },
-        Project {
             name: "Claritas",
             subtitle_en: "Desktop Epub Reader",
             subtitle_pt: "Leitor de Epub para Desktop",
@@ -65,6 +50,21 @@ fn projects() -> Vec<Project> {
             badge_pt: "Em andamento",
             badge_color: "amber",
             pulse: true,
+        },
+        Project {
+            name: "git-sage",
+            subtitle_en: "AI Conventional Commit Generator",
+            subtitle_pt: "Gerador de Commits Convencionais com IA",
+            description_en: "I was always wondering what the best way to write a commit message was so people would follow the Conventional Commits convention. For this repetitive task I built a CLI that uses a local open-source model via Ollama to read the staged diff and craft the commit message for you.",
+            description_pt: "Sempre pensei na melhor maneira de escrever mensagens de commit para que as pessoas seguissem a convenção do Conventional Commits. Para essa tarefa repetitiva, criei uma CLI que usa um modelo open source rodando localmente via Ollama, que lê o diff do projeto e constrói a mensagem do commit automaticamente.",
+            url: "https://github.com/matheussricardoo/git-sage",
+            link_label_en: "View Code ↗",
+            link_label_pt: "Ver Código ↗",
+            tags: &["Rust", "Ollama", "LLM", "CLI", "Git"],
+            badge_en: "CLI",
+            badge_pt: "CLI",
+            badge_color: "green",
+            pulse: false,
         },
         Project {
             name: "DBoard",
