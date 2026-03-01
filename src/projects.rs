@@ -52,6 +52,21 @@ fn projects() -> Vec<Project> {
             pulse: true,
         },
         Project {
+            name: "Folium",
+            subtitle_en: "Optimized Personal Notes App",
+            subtitle_pt: "App Otimizado para Notas Pessoais",
+            description_en: "An attempt to create a more optimized version of Obsidian for personal use, focused on keeping track of my notes about everything I learn in programming.",
+            description_pt: "Tentativa de criar uma versão mais otimizada do Obsidian para uso pessoal, focada em registrar minhas anotações sobre tudo que aprendo em programação.",
+            url: "",
+            link_label_en: "",
+            link_label_pt: "",
+            tags: &["Rust", "Tauri", "Svelte", "Desktop"],
+            badge_en: "Working",
+            badge_pt: "Em andamento",
+            badge_color: "amber",
+            pulse: true,
+        },
+        Project {
             name: "DBoard",
             subtitle_en: "iOS Productivity App",
             subtitle_pt: "App de Produtividade iOS",
@@ -274,20 +289,26 @@ pub fn Projects() -> impl IntoView {
                                             }}
                                         </p>
                                     </div>
-                                    <a
-                                        href=p.url
-                                        target="_blank"
-                                        class="btn-secondary"
-                                        style="font-size: 12px; padding: 8px 16px; white-space: nowrap;"
-                                    >
-                                        {move || {
-                                            if lang.get() == Language::En {
-                                                p.link_label_en
-                                            } else {
-                                                p.link_label_pt
-                                            }
-                                        }}
-                                    </a>
+                                    {if !p.url.is_empty() {
+                                        view! {
+                                            <a
+                                                href=p.url
+                                                target="_blank"
+                                                class="btn-secondary"
+                                                style="font-size: 12px; padding: 8px 16px; white-space: nowrap;"
+                                            >
+                                                {move || {
+                                                    if lang.get() == Language::En {
+                                                        p.link_label_en
+                                                    } else {
+                                                        p.link_label_pt
+                                                    }
+                                                }}
+                                            </a>
+                                        }.into_any()
+                                    } else {
+                                        view! { <span></span> }.into_any()
+                                    }}
                                 </div>
 
                                 <p class="project-description">
