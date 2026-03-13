@@ -4,4 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+chrono = "0.4.44"
+gray_matter = "0.3.2"
+include_dir = "0.7.4"
 leptos = { version = "0.8.16", features = ["csr"] }
+pulldown-cmark = "0.13.1"
+serde = { version = "1.0.228", features = ["derive"] }
