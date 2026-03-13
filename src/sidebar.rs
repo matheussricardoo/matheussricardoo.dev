@@ -104,7 +104,7 @@ pub fn Sidebar(
                 <a
                     href="#"
                     class=move || {
-                        if current_screen.get() == Screen::Stack {
+                        if matches!(current_screen.get(), Screen::Stack) {
                             active_class
                         } else {
                             inactive_class
@@ -133,6 +133,31 @@ pub fn Sidebar(
                         <path d="M9 20v2"></path>
                     </svg>
                     "Stack"
+                </a>
+
+                <a
+                    href="#"
+                    class=move || {
+                        if matches!(current_screen.get(), Screen::Articles(_) | Screen::ArticleDetail(_, _)) {
+                            active_class
+                        } else {
+                            inactive_class
+                        }
+                    }
+                    on:click=move |_| set_screen.set(Screen::Articles(Vec::new()))
+                >
+                    <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                    </svg>
+                    {move || if lang.get() == Language::En { "Articles" } else { "Artigos" }}
                 </a>
             </nav>
 
