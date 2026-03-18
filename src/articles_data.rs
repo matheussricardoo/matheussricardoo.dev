@@ -26,8 +26,6 @@ struct FrontMatter {
     date: String,
     description: String,
     tags: Vec<String>,
-    #[serde(default)]
-    path: Vec<String>,
     github_url: Option<String>,
     challenge_url: Option<String>,
 }
@@ -35,11 +33,9 @@ struct FrontMatter {
 pub fn get_all_articles(lang: Language) -> Vec<Article> {
     let mut articles = Vec::new();
     let matter = Matter::<YAML>::new();
-    let lang_str = if lang == Language::En { "en" } else { "pt-br" };
+    let lang_suffix = if lang == Language::En { "en.md" } else { "pt-br.md" };
 
-    if let Some(dir) = ARTICLES_DIR.get_dir(lang_str) {
-        collect_articles(dir, &matter, &mut articles);
-    }
+    collect_articles(&ARTICLES_DIR, &matter, &mut articles, lang_suffix);
 
     // Sort by date descending
     articles.sort_by(|a, b| {
@@ -51,19 +47,18 @@ pub fn get_all_articles(lang: Language) -> Vec<Article> {
     articles
 }
 
-fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article>) {
+fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article>, lang_suffix: &str) {
     for file in dir.files() {
         if let Some(path_str) = file.path().to_str() {
-            if !path_str.ends_with(".md") {
+            if !path_str.ends_with(lang_suffix) {
                 continue;
             }
 
-            let mut id = path_str.trim_end_matches(".md").to_string();
-            if id.starts_with("en/") {
-                id = id["en/".len()..].to_string();
-            } else if id.starts_with("pt-br/") {
-                id = id["pt-br/".len()..].to_string();
-            }
+            let mut relative_path = path_str.trim_end_matches(lang_suffix);
+            relative_path = relative_path.trim_end_matches('/');
+
+            let id = relative_path.to_string();
+            let dirs: Vec<String> = relative_path.split('/').map(|s| s.to_string()).collect();
 
             let file_contents = file.contents_utf8().unwrap_or_default();
             
@@ -78,7 +73,7 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
                         description: front_matter.description,
                         tags: front_matter.tags,
                         html_content,
-                        path: front_matter.path,
+                        path: dirs,
                         github_url: front_matter.github_url,
                         challenge_url: front_matter.challenge_url,
                     });
@@ -88,7 +83,7 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
     }
     
     for subdir in dir.dirs() {
-        collect_articles(subdir, matter, articles);
+        collect_articles(subdir, matter, articles, lang_suffix);
     }
 }
 
