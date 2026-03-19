@@ -55,6 +55,8 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
             }
 
             let mut relative_path = path_str.trim_end_matches(lang_suffix);
+            relative_path = relative_path.trim_end_matches('-');
+            relative_path = relative_path.trim_end_matches('.');
             relative_path = relative_path.trim_end_matches('/');
 
             let id = relative_path.to_string();
