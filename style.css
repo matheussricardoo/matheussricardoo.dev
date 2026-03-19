@@ -742,6 +742,10 @@ html {
     font-size: 0.9em;
 }
 
+.markdown-body pre code.hljs {
+    background-color: transparent !important;
+}
+
 .markdown-body img {
     max-width: 100%;
     box-sizing: content-box;

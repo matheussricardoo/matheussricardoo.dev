@@ -55,7 +55,29 @@
         <link data-trunk rel="copy-file" href="og-image.svg" />
         <link data-trunk rel="copy-dir" href="assets" />
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        
+        <!-- highlight.js for beautiful syntax highlighting -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     </head>
 
-    <body></body>
+    <body>
+        <script>
+            // Automatically highlight dynamically added code blocks (Leptos CSR support)
+            const observer = new MutationObserver((mutations) => {
+                let shouldHighlight = false;
+                mutations.forEach((mutation) => {
+                    if (mutation.addedNodes.length > 0) {
+                        shouldHighlight = true;
+                    }
+                });
+                if (shouldHighlight) {
+                    document.querySelectorAll('pre code:not(.hljs)').forEach((block) => {
+                        hljs.highlightElement(block);
+                    });
+                }
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        </script>
+    </body>
 </html>
