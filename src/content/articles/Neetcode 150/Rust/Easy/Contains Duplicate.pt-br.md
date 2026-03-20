@@ -11,17 +11,17 @@ challenge_url: "https://neetcode.io/problems/duplicate-integer/question?list=nee
 
 Dado um array de inteiros `nums`, retorne `true` se algum valor aparecer mais de uma vez no array, caso contrário, retorne `false`.
 
-Exemplo 1:
+**Exemplo 1:**
 ```rust
 Entrada: nums = [1, 2, 3, 3]
 
-Saida: true
+Saída: true
 ```
-Exemplo 2:
+**Exemplo 2:**
 ```rust
 Entrada: nums = [1, 2, 3, 4]
 
-Saida: false
+Saída: false
 ```
 
 ## Solução 
