@@ -39,7 +39,7 @@ pub fn Home() -> impl IntoView {
                     </div>
                 </div>
                 
-                <div style="width: 100%; max-width: 400px; height: 480px; background-color: #eee; border: 1px solid var(--border-color); display: flex; align-items: flex-end; justify-content: flex-end; padding: 16px; box-sizing: border-box; background-image: url('assets/me2.jpeg'); background-size: cover; background-position: center; flex-shrink: 0;">
+                <div style="width: 100%; max-width: 400px; height: 480px; background-color: #eee; border: 1px solid var(--border-color); display: flex; align-items: flex-end; justify-content: flex-end; padding: 16px; box-sizing: border-box; background-image: url('assets/Profile.jpeg'); background-size: cover; background-position: center; flex-shrink: 0;">
                 </div>
             </div>
             
