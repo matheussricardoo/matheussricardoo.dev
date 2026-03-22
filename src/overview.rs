@@ -1,9 +1,9 @@
-use crate::Language;
+use crate::{Language, Screen};
 use leptos::IntoView;
 use leptos::prelude::*;
 
 #[component]
-pub fn Home() -> impl IntoView {
+pub fn Home(set_screen: WriteSignal<Screen>) -> impl IntoView {
     let lang = use_context::<ReadSignal<Language>>().expect("Lang context missing");
 
     view! {
@@ -11,7 +11,7 @@ pub fn Home() -> impl IntoView {
             <div style="display: flex; gap: 48px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: 300px;">
                     <div class="mono" style="color: #888; margin-bottom: 24px;">
-                        {move || if lang.get() == Language::En { "// INITIALIZING.PORTFOLIO...V1.0.0" } else { "// INICIALIZANDO.PORTFÓLIO...V1.0.0" }}
+                        {move || if lang.get() == Language::En { "// INITIALIZING.PORTFOLIO...V2.7.0" } else { "// INICIALIZANDO.PORTFÓLIO...V2.7.0" }}
                     </div>
                     <h1 style="font-size: clamp(48px, 8vw, 84px); font-weight: 900; line-height: 0.9; margin-bottom: 24px; letter-spacing: -0.04em;">
                         {move || if lang.get() == Language::En { "HELLO, I'M MATHEUS./DEV" } else { "OLÁ, EU SOU MATHEUS./DEV" }}
@@ -30,7 +30,7 @@ pub fn Home() -> impl IntoView {
                     </p>
                     
                     <div style="display: flex; gap: 16px;">
-                        <a href="/projects" class="btn-inverse" style="text-decoration:none;">
+                        <a on:click=move |_| set_screen.set(Screen::Projects) class="btn-inverse" style="text-decoration:none; cursor: pointer;">
                             {move || if lang.get() == Language::En { "VIEW WORK" } else { "VER PROJETOS" }}
                         </a>
                         <a href=move || if lang.get() == Language::En { "/cv-en.pdf" } else { "/cv-pt.pdf" } target="_blank" class="btn-primary" style="text-decoration: none;">
