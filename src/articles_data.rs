@@ -18,6 +18,7 @@ pub struct Article {
     pub path: Vec<String>,
     pub github_url: Option<String>,
     pub challenge_url: Option<String>,
+    pub read_time: u32,
 }
 
 #[derive(Deserialize, Debug)]
@@ -67,6 +68,8 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
             if let Ok(parsed) = matter.parse::<FrontMatter>(file_contents) {
                 if let Some(front_matter) = parsed.data {
                     let html_content = parse_markdown(&parsed.content);
+                    let word_count = parsed.content.split_whitespace().count();
+                    let read_time = std::cmp::max(1, (word_count as f64 / 200.0).ceil() as u32);
                     
                     articles.push(Article {
                         id,
@@ -78,6 +81,7 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
                         path: dirs,
                         github_url: front_matter.github_url,
                         challenge_url: front_matter.challenge_url,
+                        read_time,
                     });
                 }
             }
