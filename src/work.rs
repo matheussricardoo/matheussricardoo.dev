@@ -91,7 +91,11 @@ pub fn Work() -> impl IntoView {
                             {move || if lang.get() == Language::En { "ACADEMIC BACKGROUND" } else { "FORMAÇÃO ACADÊMICA" }}
                         </h3>
                         <p style="color: var(--text-muted); font-size: 14px;">
-                            "Universidade Presbiteriana Mackenzie — Bacharelado em Sistemas de Informação (2023 - 2027)"
+                            {move || if lang.get() == Language::En {
+                                "Mackenzie Presbyterian University — Bachelor's in Information Systems (2023 - 2027)"
+                            } else {
+                                "Universidade Presbiteriana Mackenzie — Bacharelado em Sistemas de Informação (2023 - 2027)"
+                            }}
                         </p>
                     </div>
                     <a href=move || if lang.get() == Language::En { "/cv-en.pdf" } else { "/cv-pt.pdf" } target="_blank" class="btn-inverse" style="background-color: transparent; border: 1px solid var(--text-main); color: var(--text-main); text-decoration: none; padding: 12px 24px; font-size: 11px;">
