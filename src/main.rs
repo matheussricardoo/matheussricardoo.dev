@@ -72,7 +72,7 @@ fn App() -> impl IntoView {
 
             <main class="main-content">
                 {move || match screen.get() {
-                    Screen::Home => view! { <HomeView /> }.into_any(),
+                    Screen::Home => view! { <HomeView set_screen=set_screen /> }.into_any(),
                     Screen::Projects => view! { <Projects /> }.into_any(),
                     Screen::Work => view! { <Work /> }.into_any(),
                     Screen::Stack => view! { <Stack /> }.into_any(),
