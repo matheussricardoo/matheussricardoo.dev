@@ -8,6 +8,13 @@ use crate::Language;
 static ARTICLES_DIR: Dir = include_dir!("$CARGO_MANIFEST_DIR/src/content/articles");
 
 #[derive(Debug, Clone, PartialEq)]
+pub struct TocEntry {
+    pub level: usize,
+    pub text: String,
+    pub id: String,
+}
+
+#[derive(Debug, Clone, PartialEq)]
 pub struct Article {
     pub id: String,
     pub title: String,
@@ -19,6 +26,7 @@ pub struct Article {
     pub github_url: Option<String>,
     pub challenge_url: Option<String>,
     pub read_time: u32,
+    pub toc: Vec<TocEntry>,
 }
 
 #[derive(Deserialize, Debug)]
@@ -67,7 +75,7 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
             
             if let Ok(parsed) = matter.parse::<FrontMatter>(file_contents) {
                 if let Some(front_matter) = parsed.data {
-                    let html_content = parse_markdown(&parsed.content);
+                    let (html_content, toc) = parse_markdown(&parsed.content);
                     let word_count = parsed.content.split_whitespace().count();
                     let read_time = std::cmp::max(1, (word_count as f64 / 200.0).ceil() as u32);
                     
@@ -82,6 +90,7 @@ fn collect_articles(dir: &Dir, matter: &Matter<YAML>, articles: &mut Vec<Article
                         github_url: front_matter.github_url,
                         challenge_url: front_matter.challenge_url,
                         read_time,
+                        toc,
                     });
                 }
             }
@@ -97,8 +106,22 @@ pub fn get_article_by_id(id: &str, lang: Language) -> Option<Article> {
     get_all_articles(lang).into_iter().find(|a| a.id == id)
 }
 
-fn parse_markdown(markdown: &str) -> String {
-    use pulldown_cmark::{html, Parser, Options};
+fn slugify(text: &str) -> String {
+    let mut slug = String::with_capacity(text.len());
+    for c in text.chars() {
+        if c.is_alphanumeric() {
+            slug.push(c.to_ascii_lowercase());
+        } else if c.is_whitespace() || c == '-' || c == '_' {
+            if !slug.ends_with('-') && !slug.is_empty() {
+                slug.push('-');
+            }
+        }
+    }
+    slug.trim_end_matches('-').to_string()
+}
+
+fn parse_markdown(markdown: &str) -> (String, Vec<TocEntry>) {
+    use pulldown_cmark::{html, Parser, Options, Event, Tag, HeadingLevel, TagEnd};
 
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
@@ -107,8 +130,56 @@ fn parse_markdown(markdown: &str) -> String {
     options.insert(Options::ENABLE_HEADING_ATTRIBUTES);
     
     let parser = Parser::new_ext(markdown, options);
-    let mut html_output = String::new();
-    html::push_html(&mut html_output, parser);
+    let events: Vec<Event> = parser.collect();
+    let mut new_events = Vec::with_capacity(events.len());
+    let mut toc = Vec::new();
     
-    html_output
+    let mut i = 0;
+    while i < events.len() {
+        if let Event::Start(Tag::Heading { level, id: _, classes, attrs }) = &events[i] {
+            let mut text = String::new();
+            let mut j = i + 1;
+            while j < events.len() {
+                match &events[j] {
+                    Event::Text(t) | Event::Code(t) => text.push_str(t),
+                    Event::End(TagEnd::Heading(_)) => break,
+                    _ => {}
+                }
+                j += 1;
+            }
+            
+            let slug = slugify(&text);
+            let current_level = match level {
+                HeadingLevel::H1 => 1,
+                HeadingLevel::H2 => 2,
+                HeadingLevel::H3 => 3,
+                HeadingLevel::H4 => 4,
+                HeadingLevel::H5 => 5,
+                HeadingLevel::H6 => 6,
+            };
+            
+            if !slug.is_empty() {
+                toc.push(TocEntry {
+                    level: current_level,
+                    text,
+                    id: slug.clone(),
+                });
+            }
+
+            new_events.push(Event::Start(Tag::Heading {
+                level: *level,
+                id: (!slug.is_empty()).then(|| slug.into()),
+                classes: classes.clone(),
+                attrs: attrs.clone(),
+            }));
+        } else {
+            new_events.push(events[i].clone());
+        }
+        i += 1;
+    }
+    
+    let mut html_output = String::new();
+    html::push_html(&mut html_output, new_events.into_iter());
+    
+    (html_output, toc)
 }

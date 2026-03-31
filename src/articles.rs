@@ -180,7 +180,7 @@ pub fn ArticleDetail(id: String, back_path: Vec<String>, set_screen: WriteSignal
     let lang = use_context::<ReadSignal<Language>>().expect("Lang context missing");
 
     view! {
-        <div style="max-width: 800px; padding-top: 40px; padding-bottom: 80px;">
+        <div style="max-width: 1200px; padding-top: 40px; padding-bottom: 80px;">
             <button 
                 class="btn-inverse" 
                 style="margin-bottom: 48px; border: 1px solid var(--border-color); color: var(--text-main); background: transparent; padding: 8px 16px; font-size: 11px;"
@@ -191,23 +191,52 @@ pub fn ArticleDetail(id: String, back_path: Vec<String>, set_screen: WriteSignal
 
             {move || match get_article_by_id(&id, lang.get()) {
                 Some(article) => view! {
-                    <article class="markdown-body" style="background: var(--bg-color); padding: 48px; border: 1px solid var(--border-color);">
-                        <header style="margin-bottom: 48px; border-bottom: 2px solid var(--text-main); padding-bottom: 32px;">
-                            <div class="mono" style="color: #888; font-size: 12px; margin-bottom: 16px;">
-                                "// PARSING_NODE: " {article.date.clone()} 
-                            </div>
-                            <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; color: var(--text-main);">
-                                {article.title.to_uppercase()}
-                            </h1>
-                            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                                {article.tags.into_iter().map(|t| {
-                                    view! { <span class="mono" style="border: 1px solid var(--border-color); padding: 4px 8px; font-size: 10px; color: #666;">"> "{t.to_uppercase()}</span> }
-                                }).collect::<Vec<_>>()}
-                            </div>
-                        </header>
-                        
-                        <div class="article-content" inner_html=article.html_content />
-                    </article>
+                    <div style="display: flex; gap: 48px; align-items: flex-start; flex-wrap: wrap;">
+                        {if !article.toc.is_empty() {
+                            view! {
+                                <aside class="toc-aside" style="width: 250px; position: sticky; top: 40px; align-self: flex-start; flex-shrink: 0;">
+                                    <style>
+                                        "
+                                        .toc-link { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; display: block; line-height: 1.4; }
+                                        .toc-link:hover { color: var(--text-main); }
+                                        .article-content h1, .article-content h2, .article-content h3 { scroll-margin-top: 40px; }
+                                        @media (max-width: 900px) { .toc-aside { position: relative; top: 0; width: 100%; border: 1px solid var(--border-color); padding: 24px; background: var(--bg-color); } }
+                                        "
+                                    </style>
+                                    <div class="mono" style="color: #666; font-size: 10px; margin-bottom: 24px; letter-spacing: 0.2em;">"INDEX"</div>
+                                    <div style="display: flex; flex-direction: column; gap: 12px; border-left: 1px solid var(--border-color); padding-left: 16px;">
+                                        {article.toc.into_iter().map(|entry| {
+                                            view! {
+                                                <a href=format!("#{}", entry.id) class="toc-link" style=format!("margin-left: {}px;", (entry.level.saturating_sub(1) * 12))>
+                                                    {entry.text}
+                                                </a>
+                                            }
+                                        }).collect::<Vec<_>>()}
+                                    </div>
+                                </aside>
+                            }.into_any()
+                        } else {
+                            view! { <span></span> }.into_any()
+                        }}
+
+                        <article class="markdown-body" style="flex: 1; min-width: 300px; background: var(--bg-color); padding: 48px; border: 1px solid var(--border-color);">
+                            <header style="margin-bottom: 48px; border-bottom: 2px solid var(--text-main); padding-bottom: 32px;">
+                                <div class="mono" style="color: #888; font-size: 12px; margin-bottom: 16px;">
+                                    "// PARSING_NODE: " {article.date.clone()} 
+                                </div>
+                                <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; color: var(--text-main);">
+                                    {article.title.to_uppercase()}
+                                </h1>
+                                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                                    {article.tags.into_iter().map(|t| {
+                                        view! { <span class="mono" style="border: 1px solid var(--border-color); padding: 4px 8px; font-size: 10px; color: #666;">"> "{t.to_uppercase()}</span> }
+                                    }).collect::<Vec<_>>()}
+                                </div>
+                            </header>
+                            
+                            <div class="article-content" inner_html=article.html_content />
+                        </article>
+                    </div>
                 }.into_any(),
                 None => view! {
                     <div style="padding: 48px; border: 1px dashed red; color: red;">
