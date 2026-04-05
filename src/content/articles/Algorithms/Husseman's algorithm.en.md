@@ -21,8 +21,6 @@ Message: `AAAAAABBBBBCCCCDDDEEF`
 |-----------|---|---|---|---|---|---|
 | Count     | 6 | 5 | 4 | 3 | 2 | 1 |
 
----
-
 ### Building the Huffman Tree
 
 1. Create a leaf node for each character, with weight equal to its frequency.
@@ -37,8 +35,6 @@ Message: `AAAAAABBBBBCCCCDDDEEF`
 - ADEF (12) + BC (9) = Root (21)
 
 > **Tip:** In case of frequency ties, any combination is valid, but it may generate different codes.
-
----
 
 ### Visual Diagram of the Tree
 
@@ -60,8 +56,6 @@ Below is an ASCII diagram of the Huffman tree for the example above:
 - The numbers in brackets represent the sum of the frequencies of the child nodes.
 - The letters in parentheses are the original characters.
 
----
-
 ### Generating the Codes
 
 Traverse the tree from the root to each leaf:
@@ -81,13 +75,9 @@ Traverse the tree from the root to each leaf:
 
 *Note: The assignment of 0 and 1 may vary, but the structure of the path is always the same.*
 
----
-
-### 5. Compression
+### Compression
 
 Replace each character in the original message with its corresponding binary code.
-
----
 
 ## Decompression
 
@@ -96,15 +86,11 @@ To decompress, simply traverse the Huffman tree bit by bit:
 - For each bit read, go left (0) or right (1).
 - When you reach a leaf, retrieve the corresponding character and return to the root for the next symbol.
 
----
-
 ## Notes
 
 - The Huffman algorithm is great for lossless compression.
 - It is widely used in formats such as ZIP, JPEG, MP3, among others.
 - Diagrams can help visualize the construction of the tree and the assignment of codes.
-
----
 
 **Reference:**  
 [Wikipedia: Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding)

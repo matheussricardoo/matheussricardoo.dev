@@ -21,8 +21,6 @@ Mensagem: `AAAAAABBBBBCCCCDDDEEF`
 |-----------|---|---|---|---|---|---|
 | Contagem  | 6 | 5 | 4 | 3 | 2 | 1 |
 
----
-
 ### Construção da Árvore de Huffman
 
 1. Crie um nó folha para cada caractere, com peso igual à sua frequência.
@@ -37,8 +35,6 @@ Mensagem: `AAAAAABBBBBCCCCDDDEEF`
 - ADEF (12) + BC (9) = Raiz (21)
 
 > **Dica:** Em caso de empate de frequências, qualquer combinação é válida, mas pode gerar códigos diferentes.
-
----
 
 ### Diagrama Visual da Árvore
 
@@ -60,8 +56,6 @@ Abaixo, um diagrama em ASCII da árvore de Huffman para o exemplo acima:
 - Os números entre colchetes representam a soma das frequências dos nós filhos.
 - As letras entre parênteses são os caracteres originais.
 
----
-
 ### Geração dos Códigos
 
 Percorra a árvore da raiz até cada folha:
@@ -81,13 +75,9 @@ Percorra a árvore da raiz até cada folha:
 
 *Obs: A atribuição de 0 e 1 pode variar, mas a estrutura do caminho é sempre a mesma.*
 
----
-
 ### Compressão
 
 Substitua cada caractere da mensagem original pelo seu código binário correspondente.
-
----
 
 ## Descompressão
 
@@ -96,15 +86,11 @@ Para descomprimir, basta percorrer a árvore de Huffman bit a bit:
 - Para cada bit lido, siga para a esquerda (0) ou direita (1).
 - Ao chegar em uma folha, recupere o caractere correspondente e volte à raiz para o próximo símbolo.
 
----
-
 ## Observações
 
 - O algoritmo de Huffman é ótimo para compressão sem perdas.
 - É amplamente utilizado em formatos como ZIP, JPEG, MP3, entre outros.
 - Diagramas podem ajudar a visualizar a construção da árvore e a atribuição dos códigos.
-
----
 
 **Referência:**  
 [Wikipedia: Codificação de Huffman](https://pt.wikipedia.org/wiki/Codifica%C3%A7%C3%A3o_de_Huffman)

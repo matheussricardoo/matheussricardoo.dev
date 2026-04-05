@@ -37,8 +37,8 @@ pub fn Articles(set_screen: WriteSignal<Screen>, initial_path: Vec<String>) -> i
                 if !cp.is_empty() {
                     view! {
                         <div style="display: flex; align-items: center; margin-bottom: 40px; border-bottom: 1px dashed var(--border-color); padding-bottom: 16px;">
-                            <button 
-                                class="btn-inverse" 
+                            <button
+                                class="btn-inverse"
                                 style="padding: 6px 16px; font-size: 10px; border: 1px solid var(--border-color); color: var(--text-main); background: transparent;"
                                 on:click=move |_| {
                                     let mut p = current_path.get();
@@ -80,7 +80,7 @@ pub fn Articles(set_screen: WriteSignal<Screen>, initial_path: Vec<String>) -> i
                         for folder in folders {
                             let folder_clone = folder.clone();
                             items.push(view! {
-                                <div class="folder-card" style="cursor: pointer; display: flex; align-items: center; gap: 24px; padding: 24px; border: 1px solid var(--border-color); background-color: var(--bg-color); transition: background-color 0.2s;" 
+                                <div class="folder-card" style="cursor: pointer; display: flex; align-items: center; gap: 24px; padding: 24px; border: 1px solid var(--border-color); background-color: var(--bg-color); transition: background-color 0.2s;"
                                      on:click=move |_| {
                                          let mut p = current_path.get();
                                          p.push(folder_clone.clone());
@@ -106,33 +106,33 @@ pub fn Articles(set_screen: WriteSignal<Screen>, initial_path: Vec<String>) -> i
                                             </span>
                                             <span class="mono" style="color: #888; font-size: 10px;">{article.date.clone()}</span>
                                         </div>
-                                        
+
                                         <h2 style="font-size: 32px; font-weight: 900; margin: 0 0 16px 0; letter-spacing: -0.02em; line-height: 1.1;">
                                             {article.title.clone().to_uppercase()}
                                         </h2>
-                                        
+
                                         <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px;">
                                             {article.description.clone()}
                                         </p>
-                                        
+
                                         <div style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: bold; letter-spacing: 0.1em; color: var(--text-main);"
                                              on:click=move |_| set_screen.set(Screen::ArticleDetail(id_clone.clone(), current_path.get()))
                                         >
                                             {move || if lang.get() == Language::En { "[ READ ARTICLE ] ->" } else { "[ LER ARTIGO ] ->" }}
                                         </div>
                                     </div>
-                                    
+
                                     // Article Right side (Meta Data)
                                     <div style="flex: 1; min-width: 250px; border-left: 1px dashed var(--border-color); padding-left: 32px; display: flex; flex-direction: column; justify-content: center;">
                                         <div class="mono" style="color: #666; font-size: 10px; margin-bottom: 24px; letter-spacing: 0.2em;">"META DATA"</div>
-                                        
+
                                         <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 12px;">
                                             <span class="mono" style="color: #888; font-size: 10px;">"READ_TIME"</span>
                                             <span class="mono" style="color: var(--text-main); font-size: 10px; font-weight: bold;">
                                                 {format!("{} MIN", article.read_time)}
                                             </span>
                                         </div>
-                                        
+
                                         <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
                                             <span class="mono" style="color: #888; font-size: 10px;">"TAGS"</span>
                                             <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
@@ -141,7 +141,7 @@ pub fn Articles(set_screen: WriteSignal<Screen>, initial_path: Vec<String>) -> i
                                                 }).collect::<Vec<_>>()}
                                             </div>
                                         </div>
-                                        
+
                                         <div style="display: flex; gap: 16px; margin-top: 24px;">
                                             {if let Some(url) = article.github_url.clone() {
                                                 view! {
@@ -166,7 +166,7 @@ pub fn Articles(set_screen: WriteSignal<Screen>, initial_path: Vec<String>) -> i
                                 </div>
                             }.into_any());
                         }
-                        
+
                         items
                     }
                 }
@@ -176,13 +176,17 @@ pub fn Articles(set_screen: WriteSignal<Screen>, initial_path: Vec<String>) -> i
 }
 
 #[component]
-pub fn ArticleDetail(id: String, back_path: Vec<String>, set_screen: WriteSignal<Screen>) -> impl IntoView {
+pub fn ArticleDetail(
+    id: String,
+    back_path: Vec<String>,
+    set_screen: WriteSignal<Screen>,
+) -> impl IntoView {
     let lang = use_context::<ReadSignal<Language>>().expect("Lang context missing");
 
     view! {
         <div style="max-width: 1200px; padding-top: 40px; padding-bottom: 80px;">
-            <button 
-                class="btn-inverse" 
+            <button
+                class="btn-inverse"
                 style="margin-bottom: 48px; border: 1px solid var(--border-color); color: var(--text-main); background: transparent; padding: 8px 16px; font-size: 11px;"
                 on:click=move |_| set_screen.set(Screen::Articles(back_path.clone()))
             >
@@ -200,7 +204,99 @@ pub fn ArticleDetail(id: String, back_path: Vec<String>, set_screen: WriteSignal
                                         .toc-link { color: var(--text-muted); text-decoration: none; font-size: 13px; transition: color 0.2s; display: block; line-height: 1.4; }
                                         .toc-link:hover { color: var(--text-main); }
                                         .article-content h1, .article-content h2, .article-content h3 { scroll-margin-top: 40px; }
-                                        @media (max-width: 900px) { .toc-aside { position: relative; top: 0; width: 100%; border: 1px solid var(--border-color); padding: 24px; background: var(--bg-color); } }
+
+                                        .article-content { color: var(--text-main); line-height: 1.75; font-size: 16px; }
+                                        .article-content > *:first-child { margin-top: 0; }
+                                        .article-content > *:last-child { margin-bottom: 0; }
+
+                                        .article-content p { margin: 0 0 1.1rem; color: var(--text-main); }
+                                        .article-content h1, .article-content h2, .article-content h3, .article-content h4 {
+                                            margin: 1.75rem 0 0.8rem;
+                                            line-height: 1.25;
+                                            letter-spacing: -0.01em;
+                                            color: var(--text-main);
+                                        }
+                                        .article-content h1 { font-size: clamp(1.8rem, 2.8vw, 2.4rem); }
+                                        .article-content h2 { font-size: clamp(1.45rem, 2.2vw, 1.8rem); border-bottom: 1px solid var(--border-color); padding-bottom: 0.35rem; }
+                                        .article-content h3 { font-size: clamp(1.2rem, 1.8vw, 1.4rem); }
+                                        .article-content h4 { font-size: 1.05rem; }
+
+                                        .article-content ul, .article-content ol { margin: 0 0 1.1rem 1.25rem; padding-left: 0.65rem; }
+                                        .article-content li { margin: 0.35rem 0; }
+                                        .article-content li > ul, .article-content li > ol { margin-top: 0.35rem; margin-bottom: 0.35rem; }
+
+                                        .article-content blockquote {
+                                            margin: 1.25rem 0;
+                                            padding: 0.9rem 1rem;
+                                            border-left: 3px solid var(--text-main);
+                                            background: rgba(127, 127, 127, 0.08);
+                                            color: var(--text-muted);
+                                        }
+                                        .article-content blockquote p:last-child { margin-bottom: 0; }
+
+                                        .article-content hr {
+                                            border: 0;
+                                            border-top: 1px solid var(--border-color);
+                                            margin: 1.5rem 0;
+                                        }
+
+                                        .article-content table {
+                                            width: 100%;
+                                            border-collapse: collapse;
+                                            margin: 1rem 0 1.5rem;
+                                            border: 1px solid var(--border-color);
+                                            font-size: 0.95rem;
+                                        }
+                                        .article-content thead th {
+                                            background: rgba(127, 127, 127, 0.12);
+                                            font-weight: 700;
+                                        }
+                                        .article-content th, .article-content td {
+                                            border: 1px solid var(--border-color);
+                                            padding: 0.55rem 0.65rem;
+                                            text-align: left;
+                                            vertical-align: top;
+                                        }
+                                        .article-content tbody tr:nth-child(even) { background: rgba(127, 127, 127, 0.06); }
+
+                                        .article-content pre {
+                                            overflow-x: auto;
+                                            padding: 0.95rem 1rem;
+                                            border: 1px solid var(--border-color);
+                                            background: #111317;
+                                            color: #e6e9ef;
+                                            margin: 1rem 0 1.25rem;
+                                            border-radius: 6px;
+                                        }
+                                        .article-content code {
+                                            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+                                            font-size: 0.9em;
+                                            color: #1f2937;
+                                            background: rgba(127, 127, 127, 0.16);
+                                            padding: 0.12rem 0.35rem;
+                                            border-radius: 4px;
+                                        }
+                                        .article-content pre code {
+                                            background: transparent;
+                                            color: inherit;
+                                            padding: 0;
+                                            border-radius: 0;
+                                            font-size: 0.9rem;
+                                        }
+
+                                        .article-content a { color: var(--text-main); text-decoration: underline; text-underline-offset: 2px; }
+                                        .article-content img { max-width: 100%; height: auto; border: 1px solid var(--border-color); }
+
+                                        @media (max-width: 900px) {
+                                            .toc-aside { position: relative; top: 0; width: 100%; border: 1px solid var(--border-color); padding: 24px; background: var(--bg-color); }
+                                        }
+
+                                        @media (max-width: 640px) {
+                                            .article-content { font-size: 15px; }
+                                            .article-content table { display: block; overflow-x: auto; white-space: nowrap; }
+                                            .article-content th, .article-content td { padding: 0.5rem 0.55rem; }
+                                            .article-content pre { padding: 0.8rem 0.85rem; }
+                                        }
                                         "
                                     </style>
                                     <div class="mono" style="color: #666; font-size: 10px; margin-bottom: 24px; letter-spacing: 0.2em;">"INDEX"</div>
@@ -222,7 +318,7 @@ pub fn ArticleDetail(id: String, back_path: Vec<String>, set_screen: WriteSignal
                         <article class="markdown-body" style="flex: 1; min-width: 300px; background: var(--bg-color); padding: 48px; border: 1px solid var(--border-color);">
                             <header style="margin-bottom: 48px; border-bottom: 2px solid var(--text-main); padding-bottom: 32px;">
                                 <div class="mono" style="color: #888; font-size: 12px; margin-bottom: 16px;">
-                                    "// PARSING_NODE: " {article.date.clone()} 
+                                    "// PARSING_NODE: " {article.date.clone()}
                                 </div>
                                 <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.02em; color: var(--text-main);">
                                     {article.title.to_uppercase()}
@@ -233,7 +329,7 @@ pub fn ArticleDetail(id: String, back_path: Vec<String>, set_screen: WriteSignal
                                     }).collect::<Vec<_>>()}
                                 </div>
                             </header>
-                            
+
                             <div class="article-content" inner_html=article.html_content />
                         </article>
                     </div>
