@@ -62,20 +62,6 @@ fn projects() -> Vec<Project> {
             pulse: true,
         },
         Project {
-            name: "THINK2ALGO",
-            subtitle_en: "Interactive Algorithms Learning Platform",
-            subtitle_pt: "Plataforma Interativa de Aprendizado de Algoritmos",
-            description_en: "An interactive learning platform to master algorithms and data structures, featuring flashcard challenges, detailed explanations, and code templates. A full Rust rewrite is planned for the future.",
-            description_pt: "Uma plataforma interativa para dominar algoritmos e estruturas de dados, com desafios em flashcards, explicações detalhadas e templates de código. Uma reescrita completa em Rust está planejada para o futuro.",
-            links: &[
-                ("https://github.com/matheussricardoo/Think2Algo", "VIEW CODE", "VER CÓDIGO"),
-            ],
-            tags: &["TYPESCRIPT", "NEXT.JS", "REACT", "TAILWINDCSS"],
-            badge_en: "REWRITE IN RUST ->",
-            badge_pt: "REESCREVER EM RUST ->",
-            pulse: false,
-        },
-        Project {
             name: "FLUENTQUEST",
             subtitle_en: "Terminal Language Learning Game",
             subtitle_pt: "Jogo de Aprendizado de Idiomas no Terminal",
@@ -101,20 +87,6 @@ fn projects() -> Vec<Project> {
             tags: &["RUST", "LEPTOS", "CSS"],
             badge_en: "",
             badge_pt: "",
-            pulse: false,
-        },
-        Project {
-            name: "POKEDEX",
-            subtitle_en: "Game Boy-inspired Pokédex",
-            subtitle_pt: "Pokédex inspirada no Game Boy",
-            description_en: "Game Boy-inspired Pokédex with retro design, bilingual support, Pokémon comparison, and a \"Who's that Pokémon?\" quiz mode. Nostalgia with modern stack.",
-            description_pt: "Pokédex inspirada no Game Boy com design retrô, suporte bilíngue, comparação de Pokémon e modo quiz \"Quem é esse Pokémon?\". Nostalgia com stack moderna.",
-            links: &[
-                ("https://github.com/matheussricardoo/pokedex", "VIEW CODE", "VER CÓDIGO"),
-            ],
-            tags: &["TYPESCRIPT", "NEXT.JS", "TAILWINDCSS"],
-            badge_en: "GAME BOY",
-            badge_pt: "GAME BOY",
             pulse: false,
         },
         Project {
